@@ -421,7 +421,7 @@ a:hover {
   display: grid;
   align-items: center;
   padding: 0;
-  gap: 30px;
+  gap: 20px;
   grid-template-columns: .3fr 1fr;
 }
 
@@ -431,7 +431,7 @@ a:hover {
 }
 
 .ocol {
-  flex: 90%;
+  flex: 80%;
   margin: 0 0 0 0;
 }
 
