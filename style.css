@@ -529,7 +529,7 @@ a:hover {
   }
   .footer {
     background-color: var(--bg);
-    display: flex;
+    display: block;
     width: 90%;
     margin: 0 auto;
     padding-top: 1rem;
