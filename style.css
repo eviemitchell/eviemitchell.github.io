@@ -203,7 +203,7 @@ a:hover {
   /* border: var(--bg) dashed 2px; */
   border: var(--mid) 2px;
   border-radius: 6px;
-  box-shadow: 3px 3px 4px #AFAFC2;
+  box-shadow: 3px 3px 4px #D2D2DE;
 }
 
 .hero-text p {
@@ -544,5 +544,20 @@ a:hover {
     margin: 0 auto;
     padding: 1rem;
     padding-bottom: 6rem;
+  }
+
+  .foot-left {
+    margin-right: auto;
+    padding: 1rem;
+    font-weight: 400;
+  }
+
+  .foot-right {
+    padding: 1rem;
+    margin-left: auto;
+  }
+
+  .xp-image {
+    margin:30px;
   }
 }
