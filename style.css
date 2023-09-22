@@ -28,7 +28,7 @@
   --hover: #ECEBFE;
 }  */
 
-/* light mode colors!
+/* light mode colors! */
 :root {
   --bg: #f1f1fa;
   --bodytext: #1f1f1f;
@@ -37,9 +37,9 @@
   --mid: #C6C6E1;
   --light: #DBDBF1;
   --hover: #E2E2F1;
-}  */
+} 
 
-/* actual white colors! */
+/* actual white colors!
 :root {
   --bg: #ffffff;
   --bodytext: #1f1f1f;
@@ -48,7 +48,7 @@
   --mid: #f1f1fa;
   --light: #DBDBF1;
   --hover: #f1f1fa;
-} 
+}  */
 
 /* new colors
 :root {
