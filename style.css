@@ -28,7 +28,7 @@
   --hover: #ECEBFE;
 }  */
 
-/* light mode colors! */
+/* light mode colors!  */
 :root {
   --bg: #f1f1fa;
   --bodytext: #1f1f1f;
@@ -37,9 +37,9 @@
   --mid: #C6C6E1;
   --light: #DBDBF1;
   --hover: #E2E2F1;
-} 
+}
 
-/* actual white colors!
+/* actual white colors! 
 :root {
   --bg: #ffffff;
   --bodytext: #1f1f1f;
@@ -48,7 +48,7 @@
   --mid: #f1f1fa;
   --light: #DBDBF1;
   --hover: #f1f1fa;
-}  */
+} */
 
 /* new colors
 :root {
@@ -270,7 +270,7 @@ a:hover {
   padding: 3rem;
   text-align: left;
   display: grid;
-  grid-template-columns: 1fr .8fr;
+  grid-template-columns: 1fr .75fr;
   gap: 3rem;
 }
 
@@ -412,6 +412,15 @@ a:hover {
   gap: 20px;
 }
 
+.spence-columns {
+  padding: 1rem;
+  text-align: left;
+  align-items: center;  /* centering text vertically in <div> */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
 .pcol {
   flex: 0 1 20%;
   gap: 20px;
@@ -497,6 +506,9 @@ a:hover {
   text-align: left;
   display: block;
   }
+  .xp-image {
+    padding: 1rem;
+  }
 .xp-card {
   background-color: clear;
   margin: 0 auto;
@@ -562,12 +574,14 @@ a:hover {
 
   .foot-left {
     margin-right: auto;
+    line-height: 1.5rem;
     padding: 1rem;
     font-weight: 400;
   }
 
   .foot-right {
     padding: 1rem;
+    text-align: center;
     margin-left: auto;
   }
 
