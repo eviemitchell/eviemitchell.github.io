@@ -28,7 +28,7 @@
   --hover: #ECEBFE;
 }  */
 
-/* light mode colors! */
+/* light mode colors!
 :root {
   --bg: #f1f1fa;
   --bodytext: #1f1f1f;
@@ -37,8 +37,18 @@
   --mid: #C6C6E1;
   --light: #DBDBF1;
   --hover: #E2E2F1;
-} 
+}  */
 
+/* actual white colors! */
+:root {
+  --bg: #ffffff;
+  --bodytext: #1f1f1f;
+  --subtle: #686778;
+  --accent: #6B54D3;
+  --mid: #f1f1fa;
+  --light: #DBDBF1;
+  --hover: #f1f1fa;
+} 
 
 /* new colors
 :root {
@@ -260,7 +270,7 @@ a:hover {
   padding: 3rem;
   text-align: left;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr .8fr;
   gap: 3rem;
 }
 
@@ -357,6 +367,7 @@ a:hover {
 .project-section {
   padding: 1rem;
   padding-bottom: 3rem;
+  align-items: center;
   text-align: left;
   margin: 0 auto;
 }
@@ -475,7 +486,10 @@ a:hover {
 /* mobile responsivenesss */
 @media (max-width: 768px) {
   .container {
-    width: 95%;
+    width: 90%;
+  }
+  .project-container {
+    width: 90%;
   }
   .herocard {
   background-color: clear;
