@@ -494,6 +494,21 @@ a:hover {
 
 /* mobile responsivenesss */
 @media (max-width: 768px) {
+h1 {
+  font-size: 1.3rem; 
+}
+
+h2 {
+  font-size: 1.3rem; 
+}
+
+h3 {
+  font-size: 1rem; 
+}
+
+h4 {
+  font-size: 1.3rem; 
+}
   .container {
     width: 90%;
   }
@@ -502,12 +517,12 @@ a:hover {
   }
   .herocard {
   background-color: clear;
-  padding: 1rem;
+  padding: 0;
   text-align: left;
   display: block;
   }
   .xp-image {
-    padding: 1rem;
+    padding: 0;
   }
 .xp-card {
   background-color: clear;
@@ -523,6 +538,9 @@ a:hover {
     /* align-items: center; */   /* centering text vertically in <div> */
     display: block;
   }
+  .spence-columns {
+    display: block;
+  }
   .learn-columns {
     text-align: left;
     display: block;
@@ -534,6 +552,12 @@ a:hover {
     display: block;
     align-items: center;
     padding: 0;
+  }
+  .o-columns img {
+    width: 70%;
+  }
+  .learn-columns img {
+    width: 70%;
   }
   .project-columns {
     padding: 1rem;
