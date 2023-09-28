@@ -509,6 +509,12 @@ h3 {
 h4 {
   font-size: 1.3rem; 
 }
+
+p {
+  font-size: 14px;
+
+}
+
   .container {
     width: 90%;
   }
@@ -527,7 +533,7 @@ h4 {
 .xp-card {
   background-color: clear;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 2rem;
   text-align: left;
   display: block;
   }
