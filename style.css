@@ -211,9 +211,9 @@ a:hover {
   z-index: 2; /* Added z-index property for stacking order */
   /* position: center; */
   /* border: var(--bg) dashed 2px; */
-  border: var(--mid) 2px;
+  border: solid var(--mid) 1px;
   border-radius: 6px;
-  box-shadow: 3px 3px 4px #D2D2DE;
+  /*box-shadow: 2px 2px 3px #D2D2DE; */
 }
 
 .hero-text p {
@@ -508,7 +508,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem; 
+  font-size: 12px; 
 }
 
 h4 {
