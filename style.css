@@ -37,6 +37,7 @@
   --mid: #C6C6E1;
   --light: #DBDBF1;
   --hover: #E2E2F1;
+  --width: 1000px;
 }
 
 /* actual white colors! 
@@ -132,7 +133,7 @@ a:hover {
   padding: 3vh;
   margin: 0 auto;
   overflow: hidden;
-  max-width: 1000px;
+  max-width: var(--width);
   font-family: karla, sans-serif;
 }
 
@@ -226,7 +227,7 @@ a:hover {
 
 /* Single-column layout with dividers */
 .container {
-  max-width: 1000px;
+  max-width: var(--width);
   width: 100%;
   margin: 0 auto;
   padding-top: 20px;
@@ -323,7 +324,7 @@ a:hover {
 
 /* Project Styles */
 .project-container {
-  max-width: 1000px;
+  max-width: var(--width);
   width: 100%;
   margin: 0 auto;
   position: relative;

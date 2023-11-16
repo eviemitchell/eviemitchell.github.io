@@ -34,7 +34,7 @@
           </div>
         <div class="project-section reveal">
           <h3>Contribution Note</h3>
-          <p>For this project, user research was conducted collaboratively with another designer, while I was responsible for the design system, branding, and creating all components. We then split design tasks per user flow - all of the prototype screens and research artifacts shown here are my individual work, unless noted. Features and components I did not create are excluded or clearly marked to show my contribution. </p>
+          <p>For this project, user research was conducted collaboratively with another designer, while I was responsible for the design system, branding, and creating all components. We then split design tasks per user flow - I was responsible for the dashboard interactions, adding a new dog, viewing forms, and the individual dog view. My (very talented!) design partner Hemadri created the adding a log flow, but all other designs shown here are my individual work.</p>
         </div>
         <div class="project-section reveal">
           <h3>Context</h3>
@@ -46,24 +46,14 @@
           <p>Canine Assistants has only a few scattered paper records of the dogs currently in their care, and those they've raised and placed in homes and hospitals across the country. They want to keep track of them, keep in contact with the dogs' new owners, monitor their health, and track long-term trends across their population of graduated dogs.</p>
           <h4>How might we track a service dog's medical, behavioral, and educational history over years of location and caretaker changes? </h4>
         </div>
-        <!--
+        
         <div class="project-section">
           <h3>The Solution</h3>
           <h4>By building a database of comprehensive chronological records, contributed by all the dog's caretakers in standardized, filterable updates.</h4>
+          <img src="bits/intro.png">
+          <img src="bits/intro2.png">
         </div>
-        <div class="keebl-columns">
-          <div class="pcol"> <img src="keeb/aggr.png"></div>
-          <div clas="pcol"> <h4> Search and filter by location, behavior, age, and more</h4> </div>
-        </div>
-        <div class="keebr-columns">
-          <div clas="pcol"> <h4> Consolidated information added by caretakers, instructors, and vets </h4> </div>
-          <div class="pcol"> <img src="keeb/educate.png"></div>
-        </div>
-        <div class="keebl-columns">
-          <div class="pcol"> <img src="keeb/decisionmaking.png"></div>
-          <div clas="pcol"> <h4> Notifying administrators of urgent concerns </h4> </div>
-        </div>
-      -->
+
         <div class="divider"></div>
         <div class="project-section reveal">
           <h3>01 Understanding Product & User Needs</h3>
@@ -72,39 +62,58 @@
           <img src="bits/userstories.png">
         </div>
         <div class="project-section reveal">
-          <h3>02 Concept Iteration & Wireframing</h3>
-          <p>With our tight workflow of keeping design 2 weeks ahead of the development team, I continued user research while building out the basic dashboard. Through continued interviews, I learned more about the needs of our individual user groups.</p>
+          <h3>02 Basic Features</h3>
+          <p>So, the clear initial goal of our project was to build a database of the dogs in their care, with key information about their health and behavior.</p>
+        <div class="keebr-columns">
+          <div class="pcol"> <h4>Find records with search, sort, and filtering dogs. </h4> </div>
+          <div class="pcol"> <img src="bits/dashboard.gif"></div>
+        </div>
+        <div class="keebl-columns">
+          <div class="pcol"> <img src="bits/add.gif"></div>
+          <div class="pcol"> <h4>Easily add new dogs to the database.</h4> </div>
+        </div>
+        </div>
+        <div class="project-section reveal">
+          <h3>03 Insight: Many sources of information</h3>
+          <p> Through continued interviews, I learned more about the needs of our individual user groups.</p>
           <h4>Aftercare coordinators are bombarded with concerns by anxious new recipients, and have to contact 5+ past caretakers for their records to get a better understanding of the dog’s past.</h4>
           <img src="bits/records.png">
-          <h4>So, we created the chronological log system, to be used across the dog's lifetime by every carer that interacts with it. </h4>
+          <h4> So, we created the chronological log system to consolidate all these sources and records, contributed to by every carer the dog has. </h4>
         <div class="keebl-columns">
-          <div class="pcol"> <img src="bits/cawip.gif"> </div>
-          <div clas="pcol"> <h4> With tagging, filtering, and search, the records are in one place and easily discoverable as needed. </h4>
+          <div class="pcol"> <img src="bits/logs.gif"> </div>
+          <div class="pcol"> <h4> Logs track the dog's health, behavior, and educational progress.  </h4>
           </div>
         </div>
-          
+        <div class="project-section reveal">
+          <h3>04 Insight: Different access for different user types</h3>
+          <p> Speaking with the Canine Assistants dog educators, we learned that certain information in a dog’s history can bias or mislead their future partners. For example, a volunteer's dramatic record of a single conflict with another dog can cause a service dog's partner to excessively worry about aggressive behavior, even when a dog no longer exhibits any. Canine Assistants doesn’t want any issues in a service dog’s adolescence to impact the relationship with their partner.</p>
+          <h4> So, we created distinct roles and permissions, allowing users to see only recent and pertinent information on their assigned dog(s).</h4>
+        <div class="keebr-columns">
+          <div class="pcol"> <h4>Differentiated user roles and access levels.</h4> </div>
+          <div class="pcol"> <img src="bits/usermanagement.gif"></div>
+        </div>
         </div>
         <div class="project-section reveal">
-          <h3>03 More to come (●'◡'●)ノ</h3>
-          <h4> 🚧 This project is a work in progress over Fall 2023! 🚧 </h4>
+          <h3>05 Insight: Standardizing data collection</h3>
+          <p>Canine Assistants' long-term goal is to study and improve dog training techniques, and understand health trends in service dogs. To standardize their data collection, we built out their periodic report system with all the information they care about in numerical, multiple-choice format.</p>
+          <h4></h4>
+        <div class="keebl-columns">
+          <div class="pcol"> <img src="bits/forms.gif"></div>
+          <div class="pcol"> <h4>Standardize data collection with monthly check-in forms.</h4> </div>
         </div>
-        <!--
-        <div class="project-section reveal">
-          <h3>04 Final Product</h3>
-          <h4>My team successfully built out the ksdjksdj</h4>
-          <p>awooga</p>
-      </div>
+        </div>
         <div class="project-section reveal">
           <h3>05 Next Steps</h3>
-          <h4>osability testing</h4>
-          <p>awooga</p>
+          <p>The Canine Assistants project will be carried into next semester and beyond, with a new team of designers and developers continuing to add functionality and iterate improvements on our MVP. To help this along, I organized the design system I created with annotations on use cases and guidelines. And, while we didn't have time for usability testing this semester, I provided an outline of task scenarios to test for next year's designer.</p>
       </div>
         <div class="project-section reveal">
-          <h3>06 Reflection</h3>
-          <h4>cute teambuilding pics xd</h4>
-          <p>awooga</p>
+          <h3>06 Learnings ✨</h3>
+          <h4>1. Figma skills</h4>
+          <p>The intricacies of components, variants, variables, styles, and autolayout! I logged a ton of practice with advanced design and prototyping in Figma, and grew a special appreciation for the power of using  components across the entire design process 😊</p>
+          <h4>2. Collaboration >> Handoff</h4>
+          <p>There doesn’t have to be a strict design → developer “handoff” if it’s a collaborative effort across the board! I had a fantastic team in our PM, EM, and developers, and including them in our synthesis of research findings, sketching of features, and early wireframe iterations helped ensure we met each teams’ goals and designed a feasible, scalable product.</p>
+          <img src="bits/dawgs.png">
       </div>
-        -->
         <div class="project-section">
           <p style="text-align: center;"> Up next: <s style="color: var(--subtle);">Bits of Good</s> / <a href="oracle.html">Oracle</a>  / <a href="ns.html">Norfolk Southern</a> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a> </p>
         </div>
