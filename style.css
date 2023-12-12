@@ -93,7 +93,7 @@ h1 {
 
 h2 {
   font-family: karla;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal, italic;
   font-size: 2.3rem; 
 }
@@ -210,11 +210,11 @@ a:hover {
   background-color: var(--hover);
   align-items: center;
   z-index: 2; /* Added z-index property for stacking order */
-  /* position: center; */
-  /* border: var(--bg) dashed 2px; */
-  border: solid var(--mid) 1px;
+  /* position: center;
+  border: var(--bg) dashed 2px;
+  border: solid var(--mid) 1px;  */
   border-radius: 6px;
-  /*box-shadow: 2px 2px 3px #D2D2DE; */
+  box-shadow: 1px 1px 6px #D2D2DE;
 }
 
 .hero-text p {
