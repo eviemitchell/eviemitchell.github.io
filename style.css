@@ -228,7 +228,7 @@ a:hover {
 /* Single-column layout with dividers */
 .container {
   max-width: var(--width);
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -240,6 +240,7 @@ a:hover {
   width: 100%;
   margin-top: 3vh;
   margin-bottom: 3vh;
+  text-align: center;
 }
 
 /* simple 2-column cards */

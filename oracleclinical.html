@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evie Mitchell</title>
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Karla:300,400,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="index.html#" style="text-decoration: none; color: var(--bodytext);">evie mitchell</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view" target="_blank">resume</a>
+      <a href="me.html">me</a>
+      <a href="index.html">work</a>
+    </div>
+  </div>
+  <div class="project-container">
+
+    <div class="project-hero">
+      <img src="clinical/cover.png" alt="Oracle Health clinical documentation cover image">
+    </div>
+    <div class="spacer"></div>
+
+    <div class="overview" style="background-color: var(--bg);">
+      <h2>Redesigning clinical documentation for physicians and nurses, embedding AI, voice dictation, and ambient listening into everyday workflows to reduce administrative burden.</h2>
+      <div class="facts"><h3>Timeline —</h3><p>Apr 2024 – Oct 2025<br>18 months</p></div>
+      <div class="facts"><h3>Role —</h3><p>UX Designer</p></div>
+      <div class="facts"><h3>Team —</h3><p>Oracle Health Design<br>Clinical SMEs<br>Product & Engineering</p></div>
+      <div class="facts"><h3>Skills —</h3><p>User Research<br>Design for AI<br>Enterprise UX<br>Figma</p></div>
+    </div>
+
+    <div class="project-section reveal">
+      <h3>NDA Note</h3>
+      <p>This project is under NDA. Screens shown here are anonymized — the interaction patterns, design decisions, and design process are real, but all clinical content, patient data, and Oracle branding have been removed. I'd love to share more in a conversation — <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">reach out!</a></p>
+    </div>
+
+    <div class="project-section reveal">
+      <h3>01 Context</h3>
+      <p>Physicians spend nearly half their working hours on documentation — writing notes, updating records, coordinating with other providers — time that has nothing to do with actually caring for patients. It's one of the biggest drivers of burnout in healthcare, and a problem that's remained unsolved for decades. Oracle Health was rebuilding the EHR from scratch, and clinical documentation was one of the most important areas to get right.</p>
+      <h4>I joined as the design lead for clinical documentation, designing how physicians can write notes, use AI-generated summaries, dictate with their voice, and contribute to records across different devices and care settings.</h4>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="project-section reveal">
+      <h3>02 Understanding Physicians</h3>
+      <p>I worked closely with physician consultants and human factors researchers, and learned that documentation is a process that weaves in and out of a doctor's workday: in the middle of a patient encounter, quickly in the hallway between visits, or in long hours tacked onto the end of a shift. Documentation is also not in a vacuum; it is a collection of datapoints from across the patient's chart, and needs to describe the physician's internal medical decision-making.</p>
+      <h4>The core issue: physicians need to be detailed and accurate, but they're doing this when they're most pressed for time and mental bandwidth.</h4>
+      <p>So, workflows had to be fast, interruptible, and easy to pick back up. If a physician gets paged mid-note, they shouldn't lose their place or their train of thought when they come back.</p>
+
+      <img src="clinical/Needs.png" alt="Physician documentation user needs">
+    </div>
+
+    <div class="project-section reveal">
+      <h3>03 AI Summarization</h3>
+      <p>Honestly the most exciting part of this project — and also the one that required the most care. The idea was that AI could kickstart a clinical note for you: synthesizing relevant history from the patient record and pulling from what was captured during the encounter via ambient listening, so you're starting from a draft instead of a blank page.</p>
+      <h4>But AI-generated clinical content is high-stakes. A physician can't just blindly accept it; they need to be able to read it critically, catch anything wrong, and make it their own. I designed the experience around transparency and control.</h4>
+      <p>AI-generated content is visually distinct, clearly sourced, and easy to edit inline. The note always ended up reflecting the physician's own judgment. The AI was a draft, and signing it was still a clinical act requiring expertise. </p>
+
+      <img src="clinical/ainote.png" alt="Anonymized AI summarization interface">
+    </div>
+
+    <div class="project-section reveal">
+      <h3>04 Modalities and Multi-tasking</h3>
+      <p>I also designed the voice layer — both traditional dictation and ambient listening, so a clinician can turn on their device in the background and focus fully on the patient. The AI extracts the relevant clinical content afterward, allowing the physician to focus on care and not documentation at all during the visit.</p>
+      <p>Doctors all work differently, some preferring to use the note as an agenda for the visit, actively referencing it, and some leaving it until the end of the day so they can only think about providing care. Always, they need to collect information around the patient chart - results, vitals, past visits, free-text descriptions of symptoms, images of symptoms. </p>
+        <p> This led to a crucial flexibility in my designs: creating an optimized view for navigating the chart and working on the note side-by-side. The different modalities of voice, ambient listening, sourcing attachments from the chart, adding AI summarized content, and writing narrative content all need to interconnect seamlessly to work for each physician.</p>
+
+      <img src="clinical/mental.png" alt="Anonymized side-by-side interface">
+      <img src="clinical/anonchart.png" alt="Anonymized side-by-side interface">
+    </div>
+
+    <div class="project-section reveal">
+      <h3>05 Nurse Intake & Charting</h3>
+      <p>About a year in, a second team at Oracle Health reached out — they were redesigning intake and charting for nurses, and wanted me involved. Nurses document very differently from physicians: less narrative, more structured. They work in intake assessments, vitals, medication records — lots of forms and lots of data entry.</p>
+      <p>The problem was that the legacy experience made nurses navigate through what felt like an endless series of screens to complete a single task. It was tedious, slow, overkill, and a major frustration.</p>
+      <h4>I redesigned these workflows to consolidate related tasks, cut down on redundant data entry by using AI to pre-populate fields where it could, and designed a voice-charting mobile workflow so nurses could move quickly and confidently, keeping their focus on the patient, not the screen.</h4>
+
+      <p>I built trust with the nursing subject matter experts I worked with over many collaborative sessions — co-presenting directly to provider feedback panels, where our work received more vocal, positive engagement than any concurrent project in review. That feedback directly shaped the next phase of the design, and it was such a pleasure working with our nursing experts! </p>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="project-section reveal">
+      <h3>07 Impact ✨</h3>
+      <div class="o-columns">
+        <div class="lcol-title"><img src="clinical/1.png" alt="Research icon"></div>
+        <div class="ocol"><p>Led 2 workstreams end-to-end across 18 months, from early research and concept exploration to providing dev support for shipped code.</p></div>
+
+        <div class="lcol-title"><img src="clinical/2.png" alt="Impact icon"></div>
+        <div class="ocol"><p>Recruited mid-project by a second product team based on my reputation for high-impact collaboration! Took on nurse intake and charting as a second parallel workstream, expanding my responsibilities and deepening my understanding of the full clinical system.</p></div>
+
+        <div class="lcol-title"><img src="clinical/3.png" alt="Feedback icon"></div>
+        <div class="ocol"><p>Learned from and collaborated with physicians and nurses to build a new EHR that truly meets their needs.</p></div>
+      </div>
+      <h4>I'd love to go deeper on any part of this work. <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">Let's connect!</a></h4>
+    </div>
+    <div class="spacer"></div>
+    <div class="project-section">
+      <p style="text-align: center;"> Up next: <a href="oraclepp.html">Oracle Patient Portal</a> / <s style="color: var(--subtle);">Oracle Clinical</s> / <a href="oracleintern.html">Oracle Procurement</a> / <a href="ns.html">Norfolk Southern</a> / <a href="bits.html">Bits of Good</a> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a></p>
+    </div>
+
+    <div class="divider"></div>
+    <footer class="footer reveal">
+      <div class="foot-left"><p>thanks for sticking around! hope you liked my work◝(⑅•ᴗ•⑅)◜<br> i love talking design, tech, and digital art! hit me on <a href="https://www.linkedin.com/in/eviemitchelldesign/" style="text-decoration: underline;">linkedin</a> or <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">email</a> to connect <3</p></div>
+      <div class="foot-right">🧗‍♀ <a href="#" style="text-decoration: underline;">back to top! </a></div>
+    </footer>
+
+  </div>
+</body>
+</html>
