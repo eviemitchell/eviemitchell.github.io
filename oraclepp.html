@@ -39,6 +39,8 @@
     <div class="project-section reveal">
 
           <h2><a href="https://apps.apple.com/us/app/oracle-health-patient-portal/id6736528583" style="text-decoration: underline"> Check us out in the App Store!</h2></a>
+      <p> page under construction </p>
+      <!--
       <h3>01 Context</h3>
       <p>Oracle Health was building a brand new patient app — an effort to give patients a much better way to engage with their own healthcare. I got recruited specifically for this project, which was exciting and a new challenge: the deadline was App Store submission in under 4 months, and the product didn't exist yet.</p>
       <h4>My scope covered four areas: the patient homepage, a suggested care engine, secure messaging with care teams, and the account framework for medical proxies.</h4>
@@ -50,12 +52,6 @@
       <p>The homepage is the first thing a patient sees every time they open the app. It needed to show the right information at the right time — upcoming appointments, tasks to complete, care reminders — while fitting the mental model of a patient. Worth remembering: some of our users are anxious, some are sick, and some have never used a health app before. Managing confidentiality and sensitive information was a constant consideration.</p>
       <h4>So the challenge was: how can we ground the user in an action-oriented, easy to understand synopsis of their health?</h4>
 
-      <!-- 📸 IMAGE PLACEHOLDER: Anonymized homepage design
-           Recommended mock: A mobile screen showing a personalized patient homepage.
-           Show: a greeting header, an upcoming appointment card (date/time/provider blurred),
-           a "to-do" task module (e.g. "Review your care summary"), and a care suggestion card.
-           Annotate the information hierarchy — what's highest priority and why.
-      <img src="oracle/homepage-anon.png" alt="Anonymized patient homepage design"> -->
 
       <p>I designed it as a priority-ranked feed — the most time-sensitive tasks (an appointment tomorrow, an unread message from your doctor) always float to the top, and the health summary below walks the patient from a high-level snapshot view down to granular datapoints. The goal was to focus the user on actionable information, and tap into patterns patients already know from consumer mobile apps.</p>
     </div>
@@ -66,12 +62,6 @@
       <h4>The tricky part was trust. Nobody wants to feel like their health app is nagging them. Patients needed to understand how the suggestion is relevant to them personally, and understand the value in the actions they can take.</h4>
       <p>So I designed each suggestion card to be transparent about its personalized reasoning ("based on your family history") and give patients clear options — schedule it, defer it, or just learn more.</p>
 
-      <!-- 📸 IMAGE PLACEHOLDER: Suggested care card design
-           Recommended mock: A single care suggestion card, expanded and collapsed states side by side.
-           Show: a care category icon, a brief suggestion headline, a "why am I seeing this?" explanation,
-           and three action buttons (e.g. Schedule, Remind me later, Dismiss).
-           This is a great place to show interaction states / a small flow. 
-      <img src="oracle/suggestedcare-anon.png" alt="Anonymized suggested care card design">-->
     </div>
 
     <div class="project-section reveal">
@@ -80,13 +70,7 @@
       <h4>The goal was to simplify, on the patient-facing side, the complicated routing path in the background, and set clear expectations of how and when providers would respond.</h4>
       <p>A few things I focused on: making it clear who you're messaging and what their role is before you even start typing; letting patients flag what kind of message they're sending (clinical question, admin request, prescription refill) so it gets routed correctly; and telling people upfront how long a response might take. We also leveraged conversational AI to route any general and non-critical questions through Ask Oracle, saving clinicians from extra administrative burden.</p>
 
-      <!-- 📸 IMAGE PLACEHOLDER: Secure messaging flow
-           Recommended mock: 2-3 screens showing the messaging experience.
-           Screen 1: Inbox view — show a list of message threads with care team members, unread indicators.
-           Screen 2: Compose flow — show the message type selector and the "expected response time" notice.
-           Screen 3: Open conversation — show the thread view with a care team response.
-           Annotate: "response time expectation set before patient sends" to highlight the key design decision. 
-      <img src="oracle/messaging-anon.png" alt="Anonymized secure messaging flow">-->
+  
     </div>
 
     <div class="project-section reveal">
@@ -95,15 +79,6 @@
       <h4>This was the most systems-thinking-heavy part of the project. I needed a permission model flexible enough to handle a ton of real-world configurations, but simple enough that any patient could actually understand and manage it on their own.</h4>
       <p>I worked closely with product and engineering to map out every state a proxy relationship could be in — inviting someone, accepting, adjusting access, revoking it — and designed each step so that the consequences of a choice were always spelled out in plain language before you confirmed anything.</p>
 
-      <!-- 📸 IMAGE PLACEHOLDER: Proxy account framework flows
-           Recommended mock: A 3-panel flow diagram or 3 key screens.
-           Screen 1: "Who has access to your account?" — a list of proxies with their access level labeled.
-           Screen 2: "Invite someone to your account" — the add proxy flow, showing access level selector
-                     with plain-language descriptions of what each level means.
-           Screen 3: An edge case state — e.g. a pending invitation, or a proxy whose access has been restricted.
-           This is a great place to show your systems thinking — consider adding a simplified state diagram
-           showing the proxy lifecycle (invited → active → restricted → removed).
-      <img src="oracle/proxy-anon.png" alt="Anonymized proxy account framework"> -->
     </div>
 
     <div class="spacer"></div>
@@ -112,14 +87,6 @@
       <p>Four months is not a lot of time. Once the designs were in engineering's hands, a big part of my job became making sure what shipped actually matched what we designed.</p>
       <h4>I logged and tracked visual and functional bugs across the whole product, working directly with engineers to get them resolved before launch. We hit 100% design parity at GA.</h4>
       <p>A lot of that meant triaging in real time — figuring out what was a true bug, what was a technical constraint, and when there was a creative design solution that could meet both needs. In a healthcare app, small visual inconsistencies are foundational issues; they erode the sense of trust that patients need to feel safe using the product at all.</p>
-
-      <!-- 📸 IMAGE PLACEHOLDER: Bug tracking / design parity process
-           Recommended mock: A before/after comparison of a single UI detail — e.g. a card component
-           where the implemented version had spacing, color, or type inconsistencies, and the corrected version.
-           Alternatively: a screenshot of your bug log (Jira/Linear) with identifying info removed,
-           showing the scope and cadence of your QA work. Even a simple callout image showing
-           "design spec vs. implementation vs. corrected" works really well here. 
-      <img src="oracle/parity-anon.png" alt="Design parity process">-->
     </div>
 
     <div class="project-section reveal">
@@ -132,6 +99,7 @@
         <div class="ocol"><p>While this was a new skill for me to learn, I'm so glad to have it in my toolbox now. Patients using this app for the first time deserved an experience that looked and felt exactly as designed.</p></div>
       </div>
     </div>
+  -->
     <div class="spacer"></div>
     <div class="project-section">
       <p style="text-align: center;"> Up next: <s style="color: var(--subtle);">Oracle Patient Portal</s> / <a href="oracleclinical.html">Oracle Clinical</a> / <a href="oracleintern.html">Oracle Procurement</a> / <a href="ns.html">Norfolk Southern</a> / <a href="bits.html">Bits of Good</a> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a></p>
