@@ -38,12 +38,12 @@
 
     <div class="project-section reveal">
       <h3>NDA Note</h3>
-      <p>This project is under NDA. Screens shown here are anonymized with a designer system I created on my own — the interaction patterns, design decisions, and design process are real, but all clinical content, patient data, and Oracle branding have been removed. </p>
+      <p>This project is under NDA. Screens shown here are anonymized with my own components.</p>
     </div>
 
     <div class="project-section reveal">
       <h3>The Problem</h3>
-      <p>For every 8 hours doctors spend with patients, they spend 5 hours <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> struggling through unusable EHR software to record long, bloated, redundant notes, <a hred="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a> Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns) often outside of work hours, a task significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[3]</a></p>
+      <p>For every 8 hours doctors spend with patients, they spend 5 hours struggling through unusable EHR software to record long, bloated, redundant notes, a task significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> <a hred="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a> <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[3]</a></p>
       <!--
       <p>For every 8 hours doctors spend with patients, they spend 5 hours on documentation, a workload significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[2]</a> </p
       -->
@@ -53,7 +53,6 @@
     <div class="project-section reveal">
       <h3>The Solution</h3>
       <h4>By using generative AI to integrate multiple modalities of note-writing.</h4>
-      <img src="clinical/multimodal.png" alt="Diagram of the different modalities of note-writing">
     </div>
 
 <div class="divider"> </div>
@@ -72,23 +71,14 @@
 
       <p>
         First, let's automate everything we can:
-        <br>1. Kickstart a note for each visit, using a template based on this patient's history and visit type
-        <br>2. Prefill discrete chart data
-        <br>3. Start with an AI summary of the patient presentation and reason for visit
       </p>
       <img src="clinical/kickstarted.png" alt="Graphic of physician note being filled in through a patient and doctor conversation">
-
 
       <p>
         Then, ambient listening during a visit can fill in many of the gaps.
       </p>
       <img src="clinical/visitaudio.png" alt="Graphic of physician note being filled in through a patient and doctor conversation">
-      <div class="o-columns">
-        <div class="lcol-title"> <p>Content is extracted from the visit audio and added to the note.</p></div>
-        <div class="ocol">
-          <img src="clinical/addaudio.gif" alt="Animation of text generating inside the note" style="border-radius:8px; max-width: 900px; position: center;">
-        </div>
-      </div>
+      <img src="clinical/addaudio.gif" alt="Animation of text generating inside the note" style="border-radius:8px;">
 
 
     </div>
@@ -104,7 +94,8 @@
 
       <h4>So, I designed a flexible view optimized for navigating the chart and working on the note side-by-side.</h4>
 
-      <img src="clinical/anonchart.png" alt="Anonymized side-by-side interface">
+      <img src="clinical/tag.gif" alt="Graphic of physician note being filled in through a patient and doctor conversation" style="border-radius:8px;">
+
     </div>
 
     <div class="project-section reveal">
@@ -112,8 +103,8 @@
       <p>Another learning from my physician partner is that since the transition to electronic health records, physician notes have gotten <b>worse,</b> not better.  For repeat visits or long-term treatments, it became common practice to duplicate the old note and write more on top. EHR notes have grown 60% longer and 11% more redundant over the last few years. <a hred="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[3]</a></p>
       <h4> I saw an opportunity to improve the quality of note outcomes, not just the experience of making them, by integrating Oracle’s biggest differentiator - our AI capabilities.</h4>
       <p>
-      <img src="clinical/tag.gif" alt="Graphic of physician note being filled in through a patient and doctor conversation">
       </p>
+      <img src="clinical/multimodal.png" alt="Diagram of the different modalities of note-writing">
 
     </div>
 
@@ -122,6 +113,8 @@
       <h3>04 Translating to Nursing</h3>
       <p>As the experience definition phase of documentation wrapped up with a roadshow of my final demos across the VP level, I continued to work with developers throughout implementation.</p>
       <p>At the same time, the nursing product team reached out - they were starting a redesign of forms-based charting, and asked for me specifically based on my reputation with the other documentation PMs! :D So I took on a new project, building a great collaboration with our nursing experts (shoutout Tara and Anne!) and revolutionizing the charting experience.</p>
+      <p> Forms-based charting shares goals with notes; recording accurate, thorough information without breaking a clinician's attention to their patient. But, it's much more discrete data and many form fields, rather than written narrative. So audio capture was still a huge innovation, but quick keyboard macros and navigation were a unique value add.
+      </p>
     </div>
 
     <div class="spacer"></div>
@@ -131,7 +124,7 @@
       <p>Led 2 workstreams end-to-end across 18 months, from early research and concept exploration to providing dev support for shipped code.</p>
       <h4> 🧠 Drove EHR framework and built reusable patterns </h4>
       <p> I designed patterns that were picked up and scaled across the EHR - my collection feature made it into messaging; side-by-side "review and do" modality applied to acute and specialty workflows; my AI strategy drove the direction of our automatic meds reconciliation workflow; my charting guided workflow faciliated the medication administration workstream.</p>
-      <p>It feels amazing to not only see my designs in action, but also see ym influence across other products and workstreams!</p>
+      <p>It feels amazing to not only see my designs in action, but also see my influence across other products and workstreams!</p>
       <h4> 🤗 Built customer relationships </h4>
       <p> I helped reignite our relationship with our nursing client base with work that resonated with their experiences and represented their needs. We host a weekly workgroup of clients where we do research and show products/demos for feedback. This group was waning in engagement and excitement for a while, until I presented my initial charting demo. We had the most active engagement our facilitator had seen yet, with both excited positive feedback, and thoughtful constructive feedback.</p>
     </div>
