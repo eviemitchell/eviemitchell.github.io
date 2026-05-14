@@ -304,6 +304,7 @@ a:hover {
 .footer {
   background-color: var(--bg);
   display: flex;
+  max-width: var(--width);
   width: 100%;
   margin: 0 auto;
   padding-top: 1rem;
@@ -312,6 +313,21 @@ a:hover {
   position: relative;
   bottom:0;
   font-family: karla, sans-serif;
+}
+  .feet {
+      padding-top: 1rem;
+      min-height: 100px;
+      width:100%;
+  text-align: left;
+  padding-bottom: 6rem;
+  }
+
+.farewell {
+   float:left;
+}
+
+.climb {
+  float:right;
 }
 
 .foot-left {
@@ -600,36 +616,68 @@ h4 {
     align-items: center;  /* centering text vertically in <div> */
     display: block;
   }
-  .footer {
+  .feet {
     background-color: var(--bg);
     display: block;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     padding-top: 1rem;
     padding-bottom: 6rem;
     overflow: hidden;
     position: relative;
     bottom:0;
     font-family: karla, sans-serif;
-  }
-  .overview {
-    display: block;
-    margin: 0 auto;
-    padding: 1rem;
-    padding-bottom: 6rem;
+    align-items: left;
   }
 
+  .farewell {
+    margin-right: auto;
+    line-height: 1.5rem;
+    padding: 1rem;
+    font-weight: 400;
+    text-align: top;
+  }
+
+  .climb {
+    padding: 1rem;
+    text-align: top;
+    margin-left: auto;
+    float:left;
+
+  }
+
+  .footer {
+    background-color: var(--bg);
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+    position: relative;
+    bottom:0;
+    font-family: karla, sans-serif;
+    align-items: left;
+  }
   .foot-left {
     margin-right: auto;
     line-height: 1.5rem;
     padding: 1rem;
     font-weight: 400;
+    text-align: top;
+
   }
 
   .foot-right {
     padding: 1rem;
     text-align: center;
     margin-left: auto;
+  }
+
+
+  .overview {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 6rem;
   }
 
   .xp-image {
