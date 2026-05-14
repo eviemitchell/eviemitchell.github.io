@@ -58,7 +58,7 @@
 
     <div class="project-section reveal">
       <h3>01 The Problem</h3>
-      <p>For every 8 hours doctors spend with patients, they spend 5 hours struggling through unusable EHR software to record long, bloated, redundant notes, a task significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> <a hred="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a> <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[3]</a> It's imperative that accurate and thorough healthcare records of kept, both for legal and regulatory reasons, and because those records will inform future providers in providing the best possible treatment.</p>
+      <p>For every 8 hours doctors spend with patients, they spend 5 hours struggling through unusable EHR software to record long, bloated, redundant notes, a task significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> <a hred="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a> <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[3]</a> It's imperative that accurate and thorough healthcare records are kept, but currently the burden falls on physicians.</p>
       <p>I worked closely with our physician subject matter experts (shoutout Dr. Wall) to understand how documentation impacts their work and their emotional state, and to most physicians?</p>   
 
       <h4> Documentation is an intrusion, a frustration, and a distraction from what physicians really care about: their patients. </h4>
@@ -72,14 +72,22 @@
     <div class="spacer"></div>
     <div class="project-section reveal">
       <h3>02 The Solution</h3>
-      <h4>Hands-off and automatic documentation was the goal. Every minute saved writing was another minute of care and attention to their patient. </h4>
-      <p>So, let's first automate everything we can:
+      <h4>By kickstarting their note with hands-off and automatic documentation, leaving physicians only to confirm the record and make medical decisions. </h4>
+      <img src="clinical/intro.png">
+
+      <p> Every minute saved writing is another minute of care and attention to their patient. So, let's first automate everything we can:
       </p>
+        <div class="keebr-columns">
+          <div clas="pcol"> <h4> Start a note for each visit, using a template based on this patient's history and appointment type. </h4> </div>
+          <div class="pcol"> <img src="clinical/kickstart.png"></div>
+        </div>
+
+      <h4>Draft a note with AI using the intake, history, reason for visit, and relevant chart sections of discrete data. </h4>
       <img src="clinical/kickstarted.png" alt="Graphic of physician note being filled in through a patient and doctor conversation">
 
-      <p>
+      <h4>
         Then, ambient listening during a visit can fill in many of the gaps.
-      </p>
+      </h4>
       <img src="clinical/visitaudio.png" alt="Graphic of physician note being filled in through a patient and doctor conversation">
       <img src="clinical/addaudio.gif" alt="Animation of text generating inside the note" style="border-radius:8px;">
 
@@ -96,7 +104,8 @@
 
       <h4>So, I designed an optimized view for navigating the chart and working on the note side-by-side, with flexible workflows to collect information.</h4>
 
-      <img src="clinical/tag.gif" alt="Graphic of physician note being filled in through a patient and doctor conversation" style="border-radius:8px;">
+      <img src="clinical/tag.gif" alt="Graphic of physician note being filled in through a patient and doctor conversation" style="border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;
+">
 
     </div>
 
@@ -108,29 +117,35 @@
       </p>
       <img src="clinical/multimodal.png" alt="Diagram of the different modalities of note-writing">
 
+        <div class="keebr-columns">
+          <div clas="pcol"> <h4>Allowing doctors to securely sign it into record with one click.</h4> </div>
+          <div class="pcol"> <img src="clinical/sign.gif" style="border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;
+"></div>
+        </div>
+
+
     </div>
 
     <div class="spacer"></div>
     <div class="project-section reveal">
       <h3>05 Translating to Nursing</h3>
-      <p>As the experience definition phase of documentation wrapped up with a roadshow of my final demos across the VP level, I continued to work with developers throughout implementation.</p>
-      <p>At the same time, the nursing product team reached out - they were starting a redesign of forms-based charting, and asked for me specifically based on my reputation with the other documentation PMs! :D So I took on a new project, building a great collaboration with our nursing experts and revolutionizing the charting experience.</p>
+      <p>As the experience definition phase of documentation wrapped up, with a roadshow of my final demos across the VP level, I continued to work with developers on incremental implementation.</p>
+      <p>At the same time, the nursing product team reached out - they were starting to redesign forms-based charting, and asked for me specifically based on my reputation with the other documentation PMs! :D So I took on a new project, building a great collaboration with our nursing experts and revolutionizing the charting experience.</p>
       <img src="clinical/charting.png" alt="The first frame of a forms-based charting experience.">
-      <p> Nurses shares the same goal; to record accurate, thorough information without breaking their attention from their patient. But, form-based charting involves many fields of discrete data, rather than a written narrative. Just like for notes, extracting information from the visit audio was a huge innovation. Beyond that, I focused on three unique innovations:
+      <p> Nurses shares the same goal; to record accurate, thorough information without breaking their attention from their patient. But, form-based charting involves many fields of discrete data, rather than a written narrative. Just like for notes, extracting information from the visit audio was a huge advantage. Beyond that, I focused on three unique innovations:
         <div class="keebl-columns">
           <div class="pcol"> <img src="clinical/nav.png"></div>
           <div clas="pcol"> <h4> A sequential wizard experience for queueing up form sets, and quick keyboard macros for entry and navigation. </h4> </div>
         </div>
         <div class="keebr-columns">
-          <div class="pcol"> <h4> Prefill matching fields remove repetitive entry, and bring in the patient's last answer in one press. </h4> </div>
+          <div class="pcol"> <h4> Fill redundant fields and uptake the patient's last answer automatically to remove repetitive entry. </h4> </div>
           <div class="pcol"> <img src="clinical/prefill.png"></div>
         </div>
         <div class="keebl-columns">
           <div class="pcol"> <img src="clinical/indicators.png"></div>
-          <div clas="pcol"> <h4> Highlight concerns with trends over time, calculated metrics, and criticality indicators. </h4> </div>
+          <div clas="pcol"> <h4> Ease understanding by highlighting trends over time, calculated metrics, and criticality indicators. </h4> </div>
         </div>
-        
-          <!-- So audio capture was still a huge innovation, but quick keyboard macros and navigation were a unique value add. Additionally, for even the simplest annual check-up, there are many standardized screener and check-up forms to complete. I created a wizard-like workflow experience where nurses can queue up a set of forms, or add more on the fly, and work through the questions easily. For these multi-form sets, we are also able to fill matching fields to remove repetitive tasks. We also added in-view calculations or trends, unit conversions, and criticality indicators to highlight concerning vitals and make the view understandable at a glance. -->
+      
       </p>
     </div>
 
@@ -140,10 +155,10 @@
       <h4> 🚀 Shipped 2 products! </h4>
       <p>Led 2 workstreams end-to-end across 18 months, from early research and concept exploration to providing dev support for shipped code.</p>
       <h4> 🧠 Drove EHR framework and built reusable patterns </h4>
-      <p> I designed patterns that were picked up and scaled across the EHR - my collection feature made it into messaging; side-by-side "review and do" modality applied to acute and specialty workflows; my AI strategy drove the direction of our automatic meds reconciliation workflow; my charting guided workflow faciliated the medication administration workstream.</p>
+      <p> I designed patterns that were picked up and scaled across the EHR - my information-gathering feature made it into messaging and financial administrative products; the side-by-side "review and do" modality applied to acute and specialty workflows; my AI strategy drove the direction of our automatic meds reconciliation workflow; my charting guided workflow faciliated the medication administration workstream.</p>
       <p>It feels amazing to not only see my designs in action, but also see my influence across other products and workstreams!</p>
       <h4> 🤗 Built customer relationships </h4>
-      <p> I helped reignite our relationship with our nursing client base with work that resonated with their experiences and represented their needs. We host a weekly workgroup of clients where we do research and show products/demos for feedback. This group was waning in engagement and excitement for a while, until I presented my initial charting demo. We had the most active engagement our facilitator had seen yet, with both excited positive feedback, and thoughtful constructive feedback.</p>
+      <p> I helped reignite our relationship with our nursing client base with work that resonated with their experiences and represented their needs. We host a weekly workgroup of clients where we do research and show products/demos for feedback. This group was waning in engagement and excitement for a while, until I presented my initial charting demo! We had the most active engagement our facilitator had seen yet, and sparked lively discussion and critique. It was instrumental in reaching the final design, and so rewarding to chat about the work with nurses directly.</p>
     </div>
 
     <div class="spacer"></div>
