@@ -165,6 +165,7 @@ a:hover {
 
 /* Spacer */
 .spacer {
+  text-align: center;
 }
 
 .spacer h2 {
@@ -318,8 +319,8 @@ a:hover {
       padding-top: 1rem;
       min-height: 100px;
       width:100%;
-  text-align: left;
-  padding-bottom: 6rem;
+      text-align: left;
+      padding-bottom: 6rem;
   }
 
 .farewell {
@@ -526,7 +527,7 @@ a:hover {
 .hover_img a:hover span { display:block; }
 
 /* mobile responsivenesss */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
 
 p {
   font-size: 12px;
@@ -551,18 +552,45 @@ h4 {
   .container {
     width: 90%;
   }
+
   .project-container {
     width: 90%;
   }
+
   .herocard {
   background-color: clear;
   padding: 0;
   text-align: left;
   display: block;
   }
+
+.hero-text {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: var(--width);
+  background-color: var(--hover);
+  align-items: center;
+  z-index: 2; /* Added z-index property for stacking order */
+  /* position: center;
+  border: var(--bg) dashed 2px;
+  border: solid var(--mid) 1px;  */
+  border-radius: 6px;
+  box-shadow: 1px 1px 6px #D2D2DE;
+}
+
+.hero-text p {
+  text-align: left;
+  font-size: 16px;
+  flex: 1 1 auto;
+  color: var(--bodytext);
+  margin: 25px;
+}
+
   .xp-image {
     padding: 0;
   }
+
 .xp-card {
   background-color: clear;
   margin: 0 auto;
@@ -622,54 +650,6 @@ h4 {
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 6rem;
-    overflow: hidden;
-    position: relative;
-    bottom:0;
-    font-family: karla, sans-serif;
-    align-items: left;
-  }
-
-  .farewell {
-    margin-right: auto;
-    line-height: 1.5rem;
-    padding: 1rem;
-    font-weight: 400;
-    text-align: top;
-  }
-
-  .climb {
-    padding: 1rem;
-    text-align: top;
-    margin-left: auto;
-    float:left;
-
-  }
-
-  .footer {
-    background-color: var(--bg);
-    display: block;
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 6rem;
-    overflow: hidden;
-    position: relative;
-    bottom:0;
-    font-family: karla, sans-serif;
-    align-items: left;
-  }
-  .foot-left {
-    margin-right: auto;
-    line-height: 1.5rem;
-    padding: 1rem;
-    font-weight: 400;
-    text-align: top;
-
-  }
-
-  .foot-right {
-    padding: 1rem;
-    text-align: center;
-    margin-left: auto;
   }
 
 
@@ -683,4 +663,6 @@ h4 {
   .xp-image {
     margin:30px;
   }
+
+
 }
