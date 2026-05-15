@@ -626,19 +626,19 @@ h4 {
     width: 70%;
   }
   .project-columns {
-    padding: 1rem;
+    padding: 0rem;
     text-align: left;
     align-items: center;  /* centering text vertically in <div> */
     display: block;
   }
   .keebr-columns {
-    padding: 1rem;
+    padding:  0rem;
     text-align: left;
     align-items: center;  /* centering text vertically in <div> */
     display: block;
   }
   .keebl-columns {
-    padding: 1rem;
+    padding: 0rem;
     text-align: left;
     align-items: center;  /* centering text vertically in <div> */
     display: block;
