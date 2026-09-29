@@ -1,135 +1,224 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Evie Mitchell</title>
-  <link rel="icon" type="image/x-icon" href="favicon.svg">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="faveecon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service dog database for Canine Assistants | Evie Mitchell</title>
+  <meta name="description" content="How Evie Mitchell designed a database that helps Canine Assistants track the health and training of their service dogs.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600&display=swap">
+
+  <!-- style.css = shared basics (colors, fonts, nav). project.css = project page layout. -->
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Karla:300,400,700,800" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800" rel="stylesheet">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="project.css">
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FF3SWXQM73"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FF3SWXQM73');
-</script>
 <body>
-  <div class="navbar">
-    <div class="nav-left">
-      <a href="index.html#" style="text-decoration: none; color: var(--bodytext);">evie mitchell</a>
-    </div>
-    <div class="nav-right">
-      <a href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view" target="_blank">resume</a>
-      <a href="me.html">me</a>
-      <a href="index.html">work</a>
-    </div>
-  </div>
-  <div class="project-container">
-        <div class="project-hero">
-          <img src="bits/hero.png" alt="Hero shot of the final design in context">
-        </div>
-        <div class="spacer"></div>
-        <div class="overview" style="background-color: var(--bg);">
-        <h2>Helping Canine Assistants keep records, track trends, and monitor the health of their service dogs.</h2>
-            <div class="facts"><h3>Timeline —</h3><p> Fall 2023 <br> 12 weeks </p></div>
-            <div class="facts"><h3>Role —</h3><p>Product Designer </p></div>
-            <div class="facts"><h3>Team —</h3><p>Product Manager<br>Engineering Manager<br>2 Designers<br>5 Developers</p></div>
-            <div class="facts"><h3>Skills —</h3><p>User Research<br>Sprint Planning<br>Product Design<br>Figma</p></div>
-          </div>
-        <div class="project-section reveal">
-          <h3>Contribution Note</h3>
-          <p>This project was conducted by my team as a part of <a href="https://bitsofgood.org/" style="text-decoration: underline;">Bits of Good</a>, a volunteer student organization dedicated to building software for non-profits in the Atlanta area. My responsibilities included user research conducted collaboratively with another designer, feature/functionality planning as part of the leadership team, and creating the design system, branding, and all components. Then, my design partner and I split design tasks per user flow - I was responsible for the dashboard interactions, adding a new dog, viewing forms, and the individual dog view. My fellow designer created the adding a log flow, but all other designs shown here are my individual work.</p>
-        </div>
-        <div class="project-section reveal">
-          <h3>Context</h3>
-          <p> Georgia-based non-profit <a href="https://www.canineassistants.org/" style="text-decoration: underline;">Canine Assistants</a> breeds, raises, and educates service dogs, providing life-saving companions to people with disabilities across the United States free of charge. A family-run operation since 1991, they graduate ~100 service dogs annually, with hundreds living at their farm at any time.</p>
-          <h4>Our research found that Canine Assistants has very little record-keeping of the 150+ dogs in their care, and no system at all for the 2500+ dogs they've graduated and placed across the country.</h4>
-        </div>
-        <div class="project-section">
-          <h3>The Problem</h3>
-          <p>Canine Assistants has only a few scattered paper records of the dogs currently in their care, and those they've raised and placed in homes and hospitals across the country. They want to keep track of them, keep in contact with the dogs' new owners, monitor their health, and track long-term trends across their population of graduated dogs.</p>
-          <h4>How might we track a service dog's medical, behavioral, and educational history over years of location and caretaker changes? </h4>
-        </div>
-        
-        <div class="project-section">
-          <h3>The Solution</h3>
-          <h4>By building a database of comprehensive chronological records, contributed by all the dog's caretakers in standardized, filterable updates.</h4>
-          <img src="bits/intro.png">
-          <img src="bits/intro2.png">
-        </div>
 
-        <div class="divider"></div>
-        <div class="project-section reveal">
-          <h3>01 Understanding Product & User Needs</h3>
-          <p> To assess the non-profits’ needs and understand how our team can help, we held weekly discussions with the non-profit director, while I conducted user interviews across the Canine Assistants ecosystem. With my partner designer, we spoke with their aftercare point-of-contact, hospital service dog handlers, and volunteers, analyzing themes across the interview results.</p>
-          <h4>By mapping out the goals of each user group, we recognized the need for a consolidated record-keeping system, and defined the basic use cases for interacting with the database.</h4>
-          <img src="bits/userstories.png">
-        </div>
-        <div class="project-section reveal">
-          <h3>02 Basic Features</h3>
-          <p>So, the clear initial goal of our project was to build a database of the dogs in their care, with key information about their health and behavior.</p>
-        <div class="keebr-columns">
-          <div class="pcol"> <h4>Find records with search, sort, and filtering dogs. </h4> </div>
-          <div class="pcol"> <img src="bits/dashboard.gif" style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"></div>
-        </div>
-        <div class="keebl-columns">
-          <div class="pcol"> <img src="bits/add.gif" style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"></div>
-          <div class="pcol"> <h4>Easily add new dogs to the database.</h4> </div>
-        </div>
-        </div>
-        <div class="project-section reveal">
-          <h3>03 Insight: Many sources of information</h3>
-          <p> Through continued interviews, I learned more about the needs of our individual user groups.</p>
-          <h4>Aftercare coordinators are bombarded with concerns by anxious new recipients, and have to contact 5+ past caretakers for their records to get a better understanding of the dog’s past.</h4>
-          <img src="bits/records.png">
-          <h4> So, we created the chronological log system to consolidate all these sources and records, contributed to by every carer the dog has. </h4>
-        <div class="keebl-columns">
-          <div class="pcol"> <img src="bits/logs.gif" style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"> </div>
-          <div class="pcol"> <h4> Logs track the dog's health, behavior, and educational progress.  </h4>
+<!-- Invisible helper: the "pencil" texture used by the click bursts. Leave as is. -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <filter id="pencil" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="5" result="wobble"/>
+    <feDisplacementMap in="SourceGraphic" in2="wobble" scale="6" xChannelSelector="R" yChannelSelector="G" result="drawn"/>
+    <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="9" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.6" result="mask"/>
+    <feComposite in="drawn" in2="mask" operator="in"/>
+  </filter>
+</svg>
+
+
+<!-- ================= HEADER (same as the homepage) ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span aria-hidden="true">•ᴗ•</span>evie mitchell</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="text-link" href="index.html#work">work</a>
+      <a class="text-link" href="index.html#me">me</a>
+      <a class="text-link" target="_blank" href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view">resume</a>
+    </nav>
+  </div>
+</header>
+
+
+<div class="case">
+
+  <main>
+
+    <!-- ================= TOP OF THE PAGE ================= -->
+    <a class="back-link text-link" href="index.html#work">← back to work</a>
+    <div class="space"></div>
+    <h1>Helping Canine Assistants keep records, track trends, and monitor the health of their service dogs.</h1>
+
+    <dl class="project-facts">
+      <dt>Timeline</dt><dd>Fall 2023, 12 weeks</dd>
+      <dt>Role</dt><dd>Product Designer</dd>
+      <dt>Team</dt><dd>Product manager, engineering manager, 2 designers, 5 developers</dd>
+      <dt>Skills</dt><dd>User research, sprint planning, product design, Figma</dd>
+    </dl>
+
+    <figure class="shot shot-cover">
+      <a href="bits/cover.png"><img src="bits/cover.png" fetchpriority="high" alt="Hero shot of the final design in context"></a>
+    </figure>
+
+
+    <div class="case-body">
+
+      <section class="case-section" id="context">
+        <h2>Context</h2>
+        <p class="case-note">This project was conducted by my team as a part of <a class="text-link" href="https://bitsofgood.org/">Bits of Good</a>, a volunteer student organization dedicated to building software for non-profits in the Atlanta area. My responsibilities included user research conducted collaboratively with another designer, feature/functionality planning as part of the leadership team, and creating the design system, branding, and all components. My design partner and I then split design tasks per user flow: I was responsible for the dashboard interactions, adding a new dog, viewing forms, and the individual dog view. My fellow designer created the adding a log flow, but all other designs shown here are my individual work.</p>
+        <p>Georgia-based non-profit <a class="text-link" href="https://www.canineassistants.org/">Canine Assistants</a> breeds, raises, and educates service dogs, providing life-saving companions to people with disabilities across the United States free of charge. A family-run operation since 1991, they graduate ~100 service dogs annually, with hundreds living at their farm at any time.</p>
+        <p class="lead">Our research found that Canine Assistants has very little record-keeping of the 150+ dogs in their care, and no system at all for the 2,500+ dogs they've graduated and placed across the country.</p>
+<!--
+        <div class="impact-stats reveal">
+          <div class="impact-rows">
+            <div class="impact-row">
+              <p class="impact-row-label">Dogs in their care <small>a few scattered paper records</small></p>
+              <div class="impact-bars" aria-hidden="true"><span class="bar-after" style="--after: 6%"></span></div>
+              <p class="impact-change">150+</p>
+            </div>
+            <div class="impact-row">
+              <p class="impact-row-label">Dogs graduated &amp; placed <small>no system at all</small></p>
+              <div class="impact-bars" aria-hidden="true"><span class="bar-after" style="--after: 100%"></span></div>
+              <p class="impact-change">2,500+</p>
+            </div>
           </div>
+          <p class="chart-caption">Bars drawn to scale.</p>
         </div>
-        <div class="project-section reveal">
-          <h3>04 Insight: Different access for different user types</h3>
-          <p> Speaking with the Canine Assistants dog educators, we learned that certain information in a dog’s history can bias or mislead their future partners. For example, a volunteer's dramatic record of a single conflict with another dog can cause a service dog's partner to excessively worry about aggressive behavior, even when a dog no longer exhibits any. Canine Assistants doesn’t want any issues in a service dog’s adolescence to impact the relationship with their partner.</p>
-          <h4> So, we created distinct roles and permissions, allowing users to see only recent and pertinent information on their assigned dog(s).</h4>
-        <div class="keebr-columns">
-          <div class="pcol"> <h4>Differentiated user roles and access levels.</h4> </div>
-          <div class="pcol"> <img src="bits/usermanagement.gif" style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"></div>
+-->
+      </section>
+
+      <section class="case-section" id="problem">
+        <h2 style="color:var(--accent)">The Problem</h2>
+        <p>Canine Assistants has only a few scattered paper records of the dogs currently in their care, and those they've raised and placed in homes and hospitals across the country. They want to keep track of them, keep in contact with the dogs' new owners, monitor their health, and track long-term trends across their population of graduated dogs.</p>
+        <p class="case-question">How might we track a service dog's medical, behavioral, and educational history over years of location and caretaker changes?</p>
+        <div class="space"></div>
+
+        <h2 style="color:var(--accent)">The Solution</h2>
+
+        <p class="lead">By building a database of comprehensive chronological records, contributed by all the dog's caretakers in standardized, filterable updates.</p>
+        <figure class="shot">
+          <a href="bits/intro.png"><img src="bits/intro.png" loading="lazy" alt="The service dog database, showing a dog's profile and records."></a>
+        </figure>
+        <figure class="shot">
+          <a href="bits/intro2.png"><img src="bits/intro2.png" loading="lazy" alt="A second view of the service dog database."></a>
+        </figure>
+      </section>
+
+      <section class="case-section" id="needs">
+        <h2><span class="section-number">01</span>Understanding product &amp; user needs</h2>
+        <p>To assess the non-profit's needs and understand how our team could help, we held weekly discussions with the non-profit director, while I conducted user interviews across the Canine Assistants ecosystem. With my partner designer, we spoke with their aftercare point-of-contact, hospital service dog handlers, and volunteers, analyzing themes across the interview results.</p>
+        <p class="lead">By mapping out the goals of each user group, we recognized the need for a consolidated record-keeping system, and defined the basic use cases for interacting with the database.</p>
+        <figure class="shot">
+          <a href="bits/userstories.png"><img src="bits/userstories.png" loading="lazy" alt="User stories for each user group, mapped to the database's basic use cases."></a>
+        </figure>
+      </section>
+
+      <section class="case-section" id="basics">
+        <h2><span class="section-number">02</span>Basic features</h2>
+        <p>So, the clear initial goal of our project was to build a database of the dogs in their care, with key information about their health and behavior.</p>
+        <div class="split">
+          <p class="lead">Find records with search, sort, and filtering dogs.</p>
+          <figure class="shot">
+          <a href="bits/dashboard.gif"><img src="bits/dashboard.gif" loading="lazy" alt="The dashboard: searching, sorting, and filtering the list of dogs."></a>
+        </figure>
         </div>
+        <div class="split">
+          <figure class="shot">
+          <a href="bits/add.gif"><img src="bits/add.gif" loading="lazy" alt="Adding a new dog to the database."></a>
+        </figure>
+          <p class="lead">Easily add new dogs to the database.</p>
         </div>
-        <div class="project-section reveal">
-          <h3>05 Insight: Standardizing data collection</h3>
-          <p>Canine Assistants' long-term goal is to study and improve dog training techniques, and understand health trends in service dogs. To standardize their data collection, we built out their periodic report system with all the information they care about in numerical, multiple-choice format.</p>
-          <h4></h4>
-        <div class="keebl-columns">
-          <div class="pcol"> <img src="bits/forms.gif" style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"></div>
-          <div class="pcol"> <h4>Standardize data collection with monthly check-in forms.</h4> </div>
+      </section>
+
+      <section class="case-section" id="sources">
+        <h2><span class="section-number">03</span>Insight: many sources of information</h2>
+        <p>Through continued interviews, I learned more about the needs of our individual user groups.</p>
+        <p class="lead">Aftercare coordinators are bombarded with concerns by anxious new recipients, and have to contact 5+ past caretakers for their records to get a better understanding of the dog's past.</p>
+        <figure class="shot">
+          <a href="bits/records.png"><img src="bits/records.png" loading="lazy" alt="The many separate sources of a dog's records."></a>
+        </figure>
+        <p class="lead">So, we created the chronological log system to consolidate all these sources and records, contributed to by every carer the dog has.</p>
+        <div class="split">
+          <figure class="shot">
+          <a href="bits/logs.gif"><img src="bits/logs.gif" loading="lazy" alt="A dog's chronological log, with entries from every caretaker."></a>
+        </figure>
+          <p class="lead">Logs track the dog's health, behavior, and educational progress.</p>
         </div>
+      </section>
+
+      <section class="case-section" id="access">
+        <h2><span class="section-number">04</span>Insight: different access for different user types</h2>
+        <p>Speaking with the Canine Assistants dog educators, we learned that certain information in a dog's history can bias or mislead their future partners. For example, a volunteer's dramatic record of a single conflict with another dog can cause a service dog's partner to excessively worry about aggressive behavior, even when a dog no longer exhibits any. Canine Assistants doesn't want any issues in a service dog's adolescence to impact the relationship with their partner.</p>
+        <p class="lead">So, we created distinct roles and permissions, allowing users to see only recent and pertinent information on their assigned dog(s).</p>
+        <div class="split">
+          <p class="lead">Differentiated user roles and access levels.</p>
+          <figure class="shot">
+          <a href="bits/usermanagement.gif"><img src="bits/usermanagement.gif" loading="lazy" alt="Managing users and their roles and access levels."></a>
+        </figure>
         </div>
-        <div class="project-section reveal">
-          <h3>05 Next Steps</h3>
-          <p>The Canine Assistants project will be carried into next semester and beyond, with a new team of designers and developers continuing to add functionality and iterate improvements on our MVP. To help this along, I organized the design system I created with annotations on use cases and guidelines. And, while we didn't have time for usability testing this semester, I provided an outline of task scenarios to test for next year's designer.</p>
-      </div>
-        <div class="project-section reveal">
-          <h3>06 Learnings ✨</h3>
-          <h4>1. Figma skills</h4>
-          <p>The intricacies of components, variants, variables, styles, and autolayout! I logged a ton of practice with advanced design and prototyping in Figma, and grew a special appreciation for the power of using  components across the entire design process 😊</p>
-          <h4>2. Collaboration >> Handoff</h4>
-          <p>There doesn’t have to be a strict design → developer “handoff” if it’s a collaborative effort across the board! I had a fantastic team in our PM, EM, and developers, and including them in our synthesis of research findings, sketching of features, and early wireframe iterations helped ensure we met each teams’ goals and designed a feasible, scalable product.</p>
-          <img src="bits/dawgs.png">
-      </div>
-        <div class="project-section">
-          <p style="text-align: center;"> Up next: <a href="oraclepp.html">Oracle Patient Portal</a> / <a href="oracleclinical.html">Oracle Clinical</a> / <a href="oracleintern.html">Oracle Procurement</a> / <a href="ns.html">Norfolk Southern</a> / <s style="color: var(--subtle);">Bits of Good</s> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a> </p>
+      </section>
+
+      <section class="case-section" id="forms">
+        <h2><span class="section-number">05</span>Insight: standardizing data collection</h2>
+        <p>Canine Assistants' long-term goal is to study and improve dog training techniques, and understand health trends in service dogs. To standardize their data collection, we built out their periodic report system with all the information they care about in numerical, multiple-choice format.</p>
+        <div class="split">
+          <figure class="shot">
+          <a href="bits/forms.gif"><img src="bits/forms.gif" loading="lazy" alt="Filling out a monthly check-in form."></a>
+        </figure>
+          <p class="lead">Standardize data collection with monthly check-in forms.</p>
         </div>
-      </div>
-        <div class="divider"></div>
-        <footer class="feet reveal">
-          <div class="farewell"><p>thanks for sticking around! hope you liked my work◝(⑅•ᴗ•⑅)◜<br> i love talking design, tech, and digital art! hit me on <a href="https://www.linkedin.com/in/eviemitchelldesign/" style="text-decoration: underline;">linkedin</a> or <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">email</a> to connect <3</p></div>
-          <div class="climb"><p>🧗‍♀ <a href="#" style="text-decoration: underline;">back to top! </a></p></div>
-        </footer>
+      </section>
+
+      <section class="case-section" id="next">
+        <h2><span class="section-number">06</span>Next steps</h2>
+        <p>The Canine Assistants project will be carried into next semester and beyond, with a new team of designers and developers continuing to add functionality and iterate improvements on our MVP. To help this along, I organized the design system I created with annotations on use cases and guidelines. And, while we didn't have time for usability testing this semester, I provided an outline of task scenarios to test for next year's designer.</p>
+      </section>
+
+      <section class="case-section" id="learnings">
+        <h2><span class="section-number">07</span>Learnings ✨</h2>
+        <div class="impact-point">
+          <h3>Figma skills</h3>
+          <p>The intricacies of components, variants, variables, styles, and autolayout! I logged a ton of practice with advanced design and prototyping in Figma, and grew a special appreciation for the power of using components across the entire design process 😊</p>
+        </div>
+        <div class="impact-point">
+          <h3>Collaboration &gt;&gt; handoff</h3>
+          <p>There doesn't have to be a strict design → developer “handoff” if it's a collaborative effort across the board! I had a fantastic team in our PM, EM, and developers, and including them in our synthesis of research findings, sketching of features, and early wireframe iterations helped ensure we met each team's goals and designed a feasible, scalable product.</p>
+        </div>
+        <figure class="shot">
+          <a href="bits/dawgs.png"><img src="bits/dawgs.png" loading="lazy" alt="A photo from the Canine Assistants project."></a>
+        </figure>
+      </section>
+
+    </div>
+
+
+    <!-- ================= BOTTOM OF THE PAGE ================= -->
+    <nav class="more-work" aria-label="More work">
+      <p>up next</p>
+      <ul>
+        <li><a class="text-link" href="oraclepp.html">Oracle Patient Portal</a></li>
+        <li><a class="text-link" href="oracleclinical.html">Oracle Clinical</a></li>
+        <li><a class="text-link" href="ns.html">Norfolk Southern</a></li>
+        <li><a class="text-link" href="oracleintern.html">Oracle Procurement</a></li>
+      </ul>
+    </nav>
+
+    <div class="case-signoff">
+      <img src="evie-doodle.gif" width="84" height="123" alt="A looping drawing of Evie sketching on a tablet">
+      <p>thanks for sticking around! hope you liked my work ◝(⑅•ᴗ•⑅)◜<br>
+        <span class="muted">i love talking design, tech, and digital art! say hi on <a class="text-link" href="https://www.linkedin.com/in/eviemitchelldesign/" target="_blank" rel="noopener">linkedin</a> or <a class="text-link" href="mailto:eviemitch@gmail.com" target="_blank" rel="noopener">email</a> &lt;3</span></p>
+    </div>
+
+    <footer class="site-footer">
+      <span>[ v4 ]</span>
+      <a class="text-link" href="#">back to top</a>
+    </footer>
+  </main>
+
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>

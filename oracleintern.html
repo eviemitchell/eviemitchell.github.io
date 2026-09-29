@@ -1,87 +1,152 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Evie Mitchell</title>
-  <link rel="icon" type="image/x-icon" href="favicon.svg">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="faveecon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Karla:300,400,700,800" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800" rel="stylesheet">
-  <script src="script.js"></script>
-</head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FF3SWXQM73"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>Healthcare procurement at Oracle | Evie Mitchell</title>
+  <meta name="description" content="How Evie Mitchell used research and generative AI to prevent unnecessary hospital supply requests.">
 
-  gtag('config', 'G-FF3SWXQM73');
-</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600&display=swap">
+
+  <!-- style.css = shared basics (colors, fonts, nav). project.css = project page layout. -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
 <body>
-  <div class="navbar">
-    <div class="nav-left">
-      <a href="index.html#" style="text-decoration: none; color: var(--bodytext);">evie mitchell</a>
-    </div>
-    <div class="nav-right">
-      <a href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view" target="_blank">resume</a>
-      <a href="me.html">me</a>
-      <a href="index.html">work</a>
-    </div>
+
+<!-- Invisible helper: the "pencil" texture used by the click bursts. Leave as is. -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <filter id="pencil" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="5" result="wobble"/>
+    <feDisplacementMap in="SourceGraphic" in2="wobble" scale="6" xChannelSelector="R" yChannelSelector="G" result="drawn"/>
+    <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="9" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.6" result="mask"/>
+    <feComposite in="drawn" in2="mask" operator="in"/>
+  </filter>
+</svg>
+
+
+<!-- ================= HEADER (same as the homepage) ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span aria-hidden="true">•ᴗ•</span>evie mitchell</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="text-link" href="index.html#work">work</a>
+      <a class="text-link" href="index.html#me">me</a>
+      <a class="text-link" target="_blank" href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view">resume</a>
+    </nav>
   </div>
-  <div class="project-container">
-        <div class="project-hero">
-          <img src="oracle/header.png" alt="Hero shot of the final design in context">
+</header>
+
+
+<div class="case">
+
+  <main>
+
+    <!-- ================= TOP OF THE PAGE ================= -->
+    <a class="back-link text-link" href="index.html#work">← back to work</a>
+    <div class="space"></div>
+    <h1>Redesigning healthcare procurement to prevent unnecessary requests and improve buyer-requester communication.</h1>
+
+    <dl class="project-facts">
+      <dt>Timeline</dt><dd>Summer 2023, 12 weeks</dd>
+      <dt>Role</dt><dd>UX Design Intern</dd>
+      <dt>Team</dt><dd>Supply Chain Management</dd>
+      <dt>Skills</dt><dd>User research, design for AI, conversational design, Figma</dd>
+    </dl>
+
+    <figure class="shot shot-cover">
+      <a href="images/screenshot.png"><img src="images/screenshot.png" fetchpriority="high" alt="Hero shot of the final design in context"></a>
+    </figure>
+
+
+    <div class="case-body">
+
+      <section class="case-section" id="overview">
+        <h2><span class="section-number">01</span>Overview</h2>
+        <p class="lead">I designed a conversational interface leveraging generative AI and natural language processing to automate a time-consuming, tedious task for buyers.</p>
+        <p>As an intern on the supply chain management team, I had the opportunity to envision the future of healthcare procurement, exploring use cases for the growing new tech of generative AI and large language models. I designed two projects over the course of the summer, improving communication between two different end users. One focused on a conversational assistant intervening to prevent the issue, while the other was a dashboard redesign with AI-assistive features to improve the buyer's workflow.</p>
+        <div class="stat-callout">
+          <p class="stat-callout-number">15+</p>
+          <p class="stat-callout-text">hours of buyer time wasted per week on unnecessary requests</p>
         </div>
-        <div class="spacer"></div>
-        <div class="overview" style="background-color: var(--bg);">
-        <h2>Redesigning healthcare procurement to prevent unnecessary requests and improve buyer-requester communication.<!--Using generative AI and natural language processing to automate requests in healthcare procurement.--></h2>
-            <div class="facts"><h3>Timeline —</h3><p> Summer 2023 <br> 12 weeks </p></div>
-            <div class="facts"><h3>Role —</h3><p>UX Design Intern</p></div>
-            <div class="facts"><h3>Team —</h3><p>Supply Chain Management<br> </p></div>
-            <div class="facts"><h3>Skills —</h3><p>User Research<br>Design for AI<br>Conversational Design<br>Figma</p></div>
+      </section>
+
+      <section class="case-section" id="solution">
+        <h2><span class="section-number">02</span>Solution ✨</h2>
+        <p class="lead">I spent 6 weeks on user research &amp; synthesis, 6 more on iterating concepts, and then presented my findings and two final prototypes to the greater design organization.</p>
+        <figure class="phases reveal">
+          <div class="phase-track">
+            <div class="phase" style="--length: 6"><span class="phase-bar"></span><span class="phase-label"><strong>6 weeks</strong>user research &amp; synthesis</span></div>
+            <div class="phase" style="--length: 6"><span class="phase-bar"></span><span class="phase-label"><strong>6 weeks</strong>iterating concepts</span></div>
+            <div class="phase-marker"><svg viewBox="-32 -32 64 64" aria-hidden="true"><path d="M0 -30 C3 -6 6 -3 30 0 C6 3 3 6 0 30 C-3 6 -6 3 -30 0 C-6 -3 -3 -6 0 -30Z"/></svg><span class="phase-label"><strong>Final presentation</strong>to the design org</span></div>
           </div>
-        <div class="project-section">
-          <h3>01 Overview</h3>
-          <h4> I designed a conversational interface leveraging generative AI and natural language processing to automate a time-consuming, tedious task for buyers.</h4>
-            <p>As an intern on the supply chain management team, I had the opportunity to envision the future of healthcare procurement, exploring use cases for the growing new tech of generative AI and large language models. I designed two projects over the course of the summer, improving communication between two different end users. One focused on a conversational assistant intervening to prevent the issue, while the other was a dashboard redesign with AI-assistive features to improve the buyer’s workflow.</p>
+        </figure>
+        <figure class="shot">
+          <a href="images/final.png"><img src="images/final.png" loading="lazy" alt="A screenshot of Evie giving her final presentation, titled Generative AI in Healthcare Procurement, in a Zoom call. Beside are several screenshots of positive feedback messages from the Zoom chat."></a>
+        </figure>
+      </section>
+
+      <section class="case-section" id="takeaways">
+        <h2><span class="section-number">03</span>Takeaways</h2>
+        <p class="lead">The specifics of my designs are private under NDA, but I can share a few takeaways!</p>
+        <div class="impact-point">
+          <h3>Challenge the brief</h3>
+          <p>I discovered a new problem space through my own research, and made some important insights on the root of the problem, a new discovery that led my mentors to pivot and rescope the entire project brief!</p>
         </div>
-        <!--<div class="project-section reveal">
-          <h3>02 Project Scope</h3>
-          <h4>Through open-ended research with a healthcare user group, I identified a niche problem space wasting hours of time each week.</h4>
-            <img src="oracle/problemdefinition.png">
-        </div>-->
-        <div class="project-section reveal">
-          <h3>02 Solution ✨</h3>
-          <h4>I spent 6 weeks on user research & synthesis, 6 more on iterating concepts, and then presented my findings and two final prototypes to the greater design organization. </h4>
-          <img src="oracle/finalsmal.png" alt="A screenshot of Evie giving her final presentation, titled Generative AI in Healthcare Procurement, in a Zoom call. Beside are several screenshots of positive feedback messages from the Zoom chat.">
+        <div class="impact-point">
+          <h3>Story always wins</h3>
+          <p>I learned so much as a speaker over the summer, presenting at nearly a dozen key milestones and evolving my storytelling skills, learning to articulate design thinking and sell my designs to stakeholders.</p>
         </div>
-        <div class="project-section reveal">
-          <h3>03 NDA & Takeaways </h3>
-          <h4> The specifics of my designs are private under NDA, but I can share a few takeaways! </h4>
-          <!-- <p>(And <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">contact me</a> for more details privately!)</p> <br> -->
-          <div class="o-columns">
-          <div class="lcol-title"> <img src="oracle/challenge.png" alt="Challenge the brief"> </div> <div class="ocol">  <p>I discovered a new problem space through my own research, and made some important insights on the root of the problem, a new discovery that led my mentors to pivot and rescope the entire project brief!</p></div>
-          <div class="lcol-title">  <img src="oracle/story.png" alt="Story always wins"> </h4></div> <div class="ocol"> <p>I learned so much as a speaker over the summer, presenting at nearly a dozen key milestones and evolving my storytelling skills, learning to articulate design thinking and sell my designs to stakeholders.</p> </div>
-          <div class="lcol-title">  <img src="oracle/go.png" alt="Go above and beyond"> </h4></div> <div class="ocol"> <p>Over the course of the internship, I designed two products in the timeframe for one, and received the unique opportunity to present both projects to their product strategy teams, who are now using my insights to guide the future of 3 different products!</p> </div>
+        <div class="impact-point">
+          <h3>Go above and beyond</h3>
+          <p>Over the course of the internship, I designed two products in the timeframe for one, and received the unique opportunity to present both projects to their product strategy teams, who are now using my insights to guide the future of 3 different products!</p>
         </div>
-          <h4> I'd love to share more about this project. To hear more details, <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">contact me!</a></h4>
-      </div>
-        <div class="project-section reveal">
-          <h3>04 Reflection</h3>
-          <h4>I had an amazing time getting to know my team, my fellow interns, Oracle, and Seattle!</h4>
-          <p>I couldn’t have asked for a better internship experience. I learned an incredible amount from all of the experienced and knowledgeable designers in my organization, especially my amazing mentor Jason, from collaboration with my fellow interns, and from the complex and adaptable Redwood Design System. Thanks Oracle 💗</p>
-          <img src="oracle/seattle.png" alt="A photo collage of Evie's summer in Seattle: a group photo of the design interns, a photo of the oracle offices, a photo of Evie at Mt. Rainier and climbing at Mt. Erie, and a photo of two people paddleboarding in Lake Union">
-      </div>
-        <div class="project-section">
-          <p style="text-align: center;"> Up next: <a href="oraclepp.html">Oracle Patient Portal</a> / <a href="oracleclinical.html">Oracle Clinical</a> / <s style="color: var(--subtle);">Oracle Procurement</s> / <a href="ns.html">Norfolk Southern</a> / <a href="bits.html">Bits of Good</a> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a></p>
-        </div>
-        <div class="divider"></div>
-    <footer class="feet reveal">
-      <div class="farewell"><p>thanks for sticking around! hope you liked my work◝(⑅•ᴗ•⑅)◜<br> i love talking design, tech, and digital art! hit me on <a href="https://www.linkedin.com/in/eviemitchelldesign/" style="text-decoration: underline;">linkedin</a> or <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">email</a> to connect <3</p></div>
-      <div class="climb"><p>🧗‍♀ <a href="#" style="text-decoration: underline;">back to top! </a></p></div>
+        <ul class="metrics">
+          <li><strong class="metric-number">2</strong> <span class="metric-label">products designed in the time for one</span></li>
+          <li><strong class="metric-number">3</strong> <span class="metric-label">product teams using my insights</span></li>
+          <li><strong class="metric-number">~12</strong> <span class="metric-label">key milestones I presented at</span></li>
+        </ul>
+        <p class="lead">I'd love to share more about this project. To hear more details, <a class="text-link" href="mailto:eviemitch@gmail.com" target="_blank" rel="noopener">contact me!</a></p>
+      </section>
+
+      <section class="case-section" id="reflection">
+        <h2><span class="section-number">04</span>Reflection</h2>
+        <p class="lead">I had an amazing time getting to know my team, my fellow interns, Oracle, and Seattle!</p>
+        <p>I couldn't have asked for a better internship experience. I learned an incredible amount from all of the experienced and knowledgeable designers in my organization, especially my amazing mentor Jason, from collaboration with my fellow interns, and from the complex and adaptable Redwood Design System. Thanks Oracle 💗</p>
+      </section>
+
+    </div>
+
+
+    <!-- ================= BOTTOM OF THE PAGE ================= -->
+    <nav class="more-work" aria-label="More work">
+      <p>up next</p>
+      <ul>
+        <li><a class="text-link" href="oraclepp.html">Oracle Patient Portal</a></li>
+        <li><a class="text-link" href="oracleclinical.html">Oracle Clinical</a></li>
+        <li><a class="text-link" href="ns.html">Norfolk Southern</a></li>
+        <li><a class="text-link" href="bits.html">Bits of Good</a></li>
+      </ul>
+    </nav>
+
+    <div class="case-signoff">
+      <img src="evie-doodle.gif" width="84" height="123" alt="A looping drawing of Evie sketching on a tablet">
+      <p>thanks for sticking around! hope you liked my work ◝(⑅•ᴗ•⑅)◜<br>
+        <span class="muted">i love talking design, tech, and digital art! say hi on <a class="text-link" href="https://www.linkedin.com/in/eviemitchelldesign/" target="_blank" rel="noopener">linkedin</a> or <a class="text-link" href="mailto:eviemitch@gmail.com" target="_blank" rel="noopener">email</a> &lt;3</span></p>
+    </div>
+
+    <footer class="site-footer">
+      <span>[ v4 ]</span>
+      <a class="text-link" href="#">back to top</a>
     </footer>
-        </div>
-      </div>
-  </div>
+  </main>
+
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>

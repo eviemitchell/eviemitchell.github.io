@@ -1,246 +1,313 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Evie Mitchell</title>
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Karla:300,400,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800" rel="stylesheet">
-    <script src="script.js" defer></script>
-  </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FF3SWXQM73"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="faveecon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinical documentation at Oracle Health | Evie Mitchell</title>
+  <meta name="description" content="How Evie Mitchell designed AI-assisted clinical documentation that helps doctors and nurses avoid burnout.">
 
-  gtag('config', 'G-FF3SWXQM73');
-</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600&display=swap">
+
+  <!-- style.css = shared basics (colors, fonts, nav). project.css = project page layout. -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
 <body>
 
-  <div class="navbar">
+<!-- Invisible helper: the "pencil" texture used by the click bursts. Leave as is. -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <filter id="pencil" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="5" result="wobble"/>
+    <feDisplacementMap in="SourceGraphic" in2="wobble" scale="6" xChannelSelector="R" yChannelSelector="G" result="drawn"/>
+    <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="9" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.6" result="mask"/>
+    <feComposite in="drawn" in2="mask" operator="in"/>
+  </filter>
+</svg>
 
-    <div class="nav-left">
-      <a href="index.html#" style="text-decoration: none; color: var(--bodytext);">evie mitchell</a>
-    </div>
 
-    <div class="nav-right">
-      <a href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view" target="_blank">resume</a>
-      <a href="me.html">me</a>
-      <a href="index.html">work</a>
-    </div>
-
+<!-- ================= HEADER (same as the homepage) ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span aria-hidden="true">•ᴗ•</span>evie mitchell</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="text-link" href="index.html?go=work">work</a>
+      <a class="text-link" href="index.html?go=me">me</a>
+      <a class="text-link" target="_blank" href="https://drive.google.com/file/d/13-yv6iWbOE85BrvFiS3qYa49qcFSQVgZ/view">resume</a>
+    </nav>
   </div>
+</header>
 
-  <div class="project-container">
 
-    <div class="project-hero">
+<div class="case">
 
-      <img src="clinical/cover.png" alt="Oracle Health clinical documentation cover image, a full-screen image of a patient chart with a clinical note open, showing the inclusion of AI summaries and chart data. Also highlights the visual design of trends in vitals over time, and an intake form. Uses an anonymized design system of white sheets on a subtle gray background, using pale lavender and vibrant purple as color accents.">
+
+
+  <main>
+
+    <!-- ================= TOP OF THE PAGE ================= -->
+    <a class="back-link text-link" href="index.html?go=work">← back to work</a>
+          <div class="space"></div> 
+
+    <h1>Helping doctors and nurses avoid burnout with smarter clinical documentation.</h1>
+    <dl class="project-facts">
+      <dt>Timeline</dt><dd>Apr 2024 – Oct 2025, 18 months</dd>
+      <dt>Role</dt><dd>UX Designer</dd>
+      <dt>Team</dt><dd>Oracle Health Design, clinical SMEs, product &amp; engineering</dd>
+      <dt>Skills</dt><dd>User research, design for AI, enterprise UX, Figma</dd>
+    </dl>
+
+    <figure class="shot shot-cover">
+      <a href="clinical/cover.png"><img src="clinical/cover.png" fetchpriority="high" alt="A patient chart with a clinical note open, showing AI summaries and chart data, trends in vitals over time, and an intake form. Anonymized design system of white sheets on a subtle gray background, with pale lavender and vibrant purple accents."></a>
+    </figure>
+    <p class="nda">This project is under NDA. Screens shown here are anonymized with my own components.</p>
+
+
+    <div class="case-body">
+
+      <!-- ================= THE PROBLEM ================= -->
+      <section class="case-section" id="problem">
+        <h2 style="color:var(--accent)">The Problem</h2>
+        <p>For every 8 hours doctors spend with patients, they spend 5 hours struggling through unusable EHR software to record long, bloated, redundant notes, a task significantly associated with physician burnout.</p>
+
+        <figure class="hours-chart reveal">
+          <div class="hours-rows">
+            <span class="label">with patients</span><span class="hours-bar" aria-hidden="true"></span><span>8 hrs</span>
+            <span class="label">documenting in the EHR</span><span class="hours-bar is-documenting" aria-hidden="true"></span><span>5 hrs</span>
+          </div>
+          <figcaption class="chart-caption sources">Sources:
+            <a class="text-link" href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a>
+            <a class="text-link" href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a>
+          </figcaption>
+        </figure>
+
+        <p>It's imperative that accurate and thorough healthcare records are kept, but currently the burden falls on physicians.</p>
+
+        <p class="case-question">How might we make clinical notes a simple background task, and let clinicians focus on their patient?</p>
+          <div class="space-xl"></div> 
+
+        <h2 style="color:var(--accent)">The Solution</h2>
+
+        <p class="lead">By empowering physicians with hands-off, automatic documentation, so all they need to do is make medical decisions and confirm the record.</p>
+
+        <figure class="shot">
+          <a href="clinical/intro.png"><img src="clinical/intro.png" loading="lazy" alt="A patient chart with a clinical note open, showing AI summaries and chart data."></a>
+        </figure>
+      </section>
+
+      <hr class="section-divider">
+
+
+      <!-- ================= 01 UNDERSTANDING THE USER ================= -->
+      <section class="case-section" id="user">
+        <h2><span class="section-number">01</span>Understanding the user</h2>
+        <p>I worked closely with our physician subject matter experts (shoutout Dr. Wall) to understand how documentation impacts their work and their emotional state. To most physicians:</p>
+        <p class="lead">Documentation is an intrusion, a frustration, and a distraction from what physicians really care about: their patients.</p>
+        <p>It weaves its way into snatches of time wherever physicians can manage: glancing between their patient and the screen as they jot notes, dictating a few words in the hallway between visits, or in long hours tacked onto the end of a shift. Besides the practical difficulty of this task, doctors hate that they're forced to spend less face-to-face time with patients.</p>
+        <p class="user-goal"><span class="user-goal-label">User goal</span>As a <b>primary care physician</b>, I need to document my patient's visit without disrupting my clinical workflow, so that I can <b style="color: var(--accent)">focus fully on my patient and their treatment.</b></p>
+      </section>
+
+
+      <!-- ================= 02 AUTOMATION ================= -->
+      <section class="case-section" id="automation">
+        <h2><span class="section-number">02</span>Automation</h2>
+        <p class="lead">Every minute saved writing is another minute of care and attention to their patient. So, let's first automate everything we can.</p>
+        <p>When a visit starts, we already have a wealth of information at our hands: the patient's medical history, the type of appointment they booked, the reason for visit, and tons of extra detail from their pre-visit registration forms, or gathered by the nurse during intake. Using this, we can:</p>
+        <div class="split">
+          <p class="lead">Kickstart a templated note customized to this patient and this visit.</p>
+          <figure class="shot">
+            <a href="clinical/kickstart.png"><img src="clinical/kickstart.png" loading="lazy" alt="A minimized Notes module in the bottom right of the chart, showing a draft Annual Wellness Visit note created automatically by the AI system." style="filter: drop-shadow(1px 1px 6px #D2D2DE);"></a>
+          </figure>
+        </div>
+        <div class="split">
+          <figure class="shot">
+            <a href="clinical/kickstarted.png"><img src="clinical/kickstarted.png" loading="lazy" alt="The kickstarted note, drafted with AI from the patient's history and reason for visit."></a>
+          </figure>
+          <p class="lead">Draft a note with AI using what we know: the patient's history and why they're here.</p>
+        </div>
+      </section>
+
+
+      <!-- ================= 03 AUDIO ANALYSIS ================= -->
+      <section class="case-section" id="audio">
+        <h2><span class="section-number">03</span>Audio analysis</h2>
+        <p class="lead">Then, ambient listening during a visit can fill in many of the gaps.</p>
+        <p>With Oracle Health's clinical assistant, doctors can use their mobile device to record visit audio, and place it unobtrusively face-down on the counter. As they discuss the situation face-to-face with their patient, the assistant extracts information from the audio, contributing to the note and even drafting orders for the physician to confirm later.</p>
+        <figure class="shot">
+            <a href="clinical/visitaudio.png"><img src="clinical/visitaudio.png" loading="lazy" alt="A doctor-patient conversation. The patient says: My stomach pain's about a 4 right now, but was way worse this morning. The physician says: Hmm, your abdomen's soft and non-tender. Since the symptoms have persisted for 4 days, I'm going to prescribe you Metoclopramide."></a>
+          </figure>
+        <div class="split">
+          <figure class="shot">
+            <a href="clinical/addaudio.gif"><img src="clinical/addaudio.gif" loading="lazy" alt="Animation of AI adding to the note, based on content extracted from the visit audio." style="filter: drop-shadow(1px 1px 6px #D2D2DE);"></a>
+          </figure>
+          <p class="lead">Based on the analyzed audio, relevant information is added to the note in generated text.</p>
+        </div>
+      </section>
+
+
+      <!-- ================= 04 CAPTURING THE INTERNAL ================= -->
+      <section class="case-section" id="internal">
+        <h2><span class="section-number">04</span>Capturing the internal</h2>
+        <p>But, automatically writing a note won't solve everything.</p>
+        <p class="lead">Notes don't just describe what happened in a visit: they're a narrative of the physician's medical decision-making and the evidence supporting it.</p>
+        <p>So, every data point that contributes to their assessment, every differential diagnosis they rule out in their heads, and the reasoning behind the plan they prescribe must be laid out for a legal, regulatory, and medical trail.</p>
+        <p>Physicians navigate through the patient's record, gathering lab results, trends in vitals, details from previous visit notes, and more, and add them to the note. "Copy-pasting" is a major legal no-no in medicine, so we created a shortcut to collect this information with clear attribution and links back to the original source.</p>
+        <p class="user-goal"><span class="user-goal-label">User goal</span>As a <b>primary care physician</b>, I need to collect my thoughts and important information for medical decision-making, so that I can <b style="color: var(--accent)">understand and communicate my patient's story.</b></p>
+        <p class="lead">So, I designed an optimized view for navigating the chart and working on the note side-by-side, with flexible workflows to collect information.</p>
+        <p>Oracle's conversational Ask Oracle framework facilitates these workflows. Users can use commands (verbal or typed) to add results, or drag and drop any information they need. We intelligently place the content in the note's structure, and let doctors rearrange and add commentary freely.</p>
+        <figure class="shot">
+          <a href="clinical/tag.gif"><img src="clinical/tag.gif" loading="lazy" alt="Animation of the full-screen chart with the note in a side panel. The user types: Add his last PFT FEV1 results to my note. The result appears in a dropdown, then slides across the screen into the note." style="filter: drop-shadow(1px 1px 6px #D2D2DE);"></a>
+        </figure>
+      </section>
+
+
+      <!-- ================= 05 RAISING THE QUALITY BAR ================= -->
+      <section class="case-section" id="quality">
+        <h2><span class="section-number">05</span>Raising the quality bar</h2>
+        <p>Another learning from my physician partner: since the transition to electronic health records, physician notes have gotten <strong>worse</strong>, not better. For repeat visits or long-term treatments, it became common practice to duplicate the old note and write more on top. EHR notes have grown 60% longer and 11% more redundant over the last few years. <a class="text-link sources" href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a></p>
+        <p class="lead">I saw an opportunity to improve the quality of note outcomes, not just the experience of making them, by integrating Oracle's biggest differentiator: our AI capabilities.</p>
+        <figure class="shot">
+          <a href="clinical/multimodal.png"><img src="clinical/multimodal.png" loading="lazy" alt="Diagram of multimodal note writing. The physician writes, collects, and dictates. AI automatically adds visit audio, AI summaries, and chart data, then collates the sources and trims redundancy. The physician does a quick review and the note is finalized."></a>
+        </figure>
+        <div class="split">
+          <p class="lead">Allowing doctors to securely sign it into record with one click.</p>
+          <figure class="shot">
+            <a href="clinical/sign.gif"><img src="clinical/sign.gif" loading="lazy" alt="Animation of a physician finalizing a completed note in one click, adding his e-signature and removing it from Drafts." style="filter: drop-shadow(1px 1px 6px #D2D2DE);"></a>
+          </figure>
+        </div>
+      </section>
+
+
+      <!-- ================= 06 TRANSLATING TO NURSING ================= -->
+      <section class="case-section" id="nursing">
+        <h2><span class="section-number">06</span>Translating to nursing</h2>
+        <p>As the experience definition phase of documentation wrapped up, with a roadshow of my final demos across the VP level, I continued to work with developers on incremental implementation.</p>
+        <p>At the same time, the nursing product team reached out. They were starting to redesign forms-based charting, and asked for me specifically based on my reputation with the other documentation PMs! So I took on a new project, building a great collaboration with our nursing experts and revolutionizing the charting experience.</p>
+        <figure class="shot">
+          <a href="clinical/charting.png"><img src="clinical/charting.png" loading="lazy" alt="The first screen of the forms-based charting experience."></a>
+        </figure>
+        <p>Nurses share the same goal: to record accurate, thorough information without breaking their attention from their patient. But form-based charting involves many fields of discrete data, rather than a written narrative. Just like for notes, extracting information from the visit audio was a huge advantage. Beyond that, I focused on three unique innovations:</p>
+        <div class="split">
+          <figure class="shot">
+            <a href="clinical/nav.png"><img src="clinical/nav.png" loading="lazy" alt="The form navigation bar, which shows progress and lets nurses jump between sections or add another form on the fly."></a>
+          </figure>
+          <p class="lead">A sequential wizard for queueing up form sets, with quick keyboard macros for entry and navigation.</p>
+        </div>
+        <div class="split">
+          <p class="lead">Fill redundant fields and intelligently carry over the patient's last answer, to remove repetitive entry.</p>
+          <figure class="shot">
+            <a href="clinical/prefill.png"><img src="clinical/prefill.png" loading="lazy" alt="A section of the intake form highlighting fields filled in from the patient's pre-visit registration, or carried over from last time."></a>
+          </figure>
+        </div>
+        <div class="split">
+          <figure class="shot">
+            <a href="clinical/indicators.png"><img src="clinical/indicators.png" loading="lazy" alt="Visual design within the form: trends over time, calculated values, unit conversions, and criticality indicators for vitals like temperature."></a>
+          </figure>
+          <p class="lead">Ease understanding by highlighting trends over time, calculated metrics, and criticality indicators.</p>
+        </div>
+      </section>
+
+
+      <!-- ================= 07 IMPACT =================
+           The numbers are plain text, so edit them right here.
+           To change a bar's length, edit style="--after: 70%". -->
+      <section class="case-section" id="impact">
+        <h2><span class="section-number">07</span>Impact ✨</h2>
+        <p>Since launch, the documentation tools I designed have given clinicians real time back.</p>
+
+        <div class="impact-stats reveal">
+          <div class="impact-rows">
+            <div class="impact-row">
+              <p class="impact-row-label">Documentation time</p>
+              <div class="impact-bars" aria-hidden="true"><span class="bar-before"></span><span class="bar-after" style="--after: 70%"></span></div>
+              <p class="impact-change">−30%</p>
+            </div>
+            <div class="impact-row">
+              <p class="impact-row-label">Time in the EHR</p>
+              <div class="impact-bars" aria-hidden="true"><span class="bar-before"></span><span class="bar-after" style="--after: 75%"></span></div>
+              <p class="impact-change">−25%</p>
+            </div>
+            <div class="impact-row impact-row-clock">
+              <svg class="clock" viewBox="0 0 64 64" aria-hidden="true">
+                <circle class="clock-face" cx="32" cy="32" r="28"/>
+                <g class="clock-ticks">
+                  <path d="M32 5 V9"/><path d="M32 5 V9" transform="rotate(30 32 32)"/><path d="M32 5 V9" transform="rotate(60 32 32)"/>
+                  <path d="M32 5 V9" transform="rotate(90 32 32)"/><path d="M32 5 V9" transform="rotate(120 32 32)"/><path d="M32 5 V9" transform="rotate(150 32 32)"/>
+                  <path d="M32 5 V9" transform="rotate(180 32 32)"/><path d="M32 5 V9" transform="rotate(210 32 32)"/><path d="M32 5 V9" transform="rotate(240 32 32)"/>
+                  <path d="M32 5 V9" transform="rotate(270 32 32)"/><path d="M32 5 V9" transform="rotate(300 32 32)"/><path d="M32 5 V9" transform="rotate(330 32 32)"/>
+                </g>
+                <!-- the purple wedge: 6.5 minutes out of a 60-minute clock face -->
+                <circle class="clock-wedge" cx="32" cy="32" r="14" pathLength="60" transform="rotate(-90 32 32)"/>
+                <path class="clock-hand" d="M32 32 V10"/>
+                <circle class="clock-pin" cx="32" cy="32" r="2.2"/>
+              </svg>
+              <p class="impact-row-label">Nursing encounters <small>shorter, per patient</small></p>
+              <p class="impact-change">−6½ min</p>
+            </div>
+          </div>
+          <p class="chart-caption"><span class="legend-swatch is-before"></span>before <span class="legend-swatch is-after"></span>after launch of Clinical AI Assistant</p>
+
+          <!-- the biggest number, last and highlighted -->
+          <div class="impact-headline">
+            <p class="impact-number">400,000+<svg class="impact-sparkle" viewBox="-32 -32 64 64" aria-hidden="true"><path d="M0 -30 C3 -6 6 -3 30 0 C6 3 3 6 0 30 C-3 6 -6 3 -30 0 C-6 -3 -3 -6 0 -30Z"/></svg></p>
+            <p class="impact-number-label">hours saved for US doctors</p>
+          </div>
+        </div>
+          <p class="chart-caption sources">Sources:
+            <a class="text-link" href="https://www.oracle.com/news/announcement/oracle-health-expands-clinical-ai-agent-with-coding-dictation-chart-review-2026-08-19/">[1]</a>
+            <a class="text-link" href="https://www.oracle.com/customers/horizon-corporations/">[2]</a>
+            <a class="text-link" href="https://www.oracle.com/customers/atlanticare/">[3]</a>
+          </p>
+      </section>
+      <!-- ================= 08 REFLECTION ================= -->
+      <section class="case-section" id="reflection">
+        <h2><span class="section-number">08</span>Reflection</h2>
+        <div class="impact-point">
+          <h3>🚀 Shipped 2 products!</h3>
+          <p>Led 2 workstreams end-to-end across 18 months, from early research and concept exploration to providing dev support for shipped code.</p>
+        </div>
+        <div class="impact-point">
+          <h3>🧠 Drove EHR framework and built reusable patterns</h3>
+          <p>I designed patterns that were picked up and scaled across the EHR: my information-gathering feature made it into messaging and financial administrative products; the side-by-side "review and do" modality applied to acute and specialty workflows; my AI strategy drove the direction of our automatic meds reconciliation workflow; and my charting guided workflow facilitated the medication administration workstream.</p>
+          <p>It feels amazing to not only see my designs in action, but also see my influence across other products and workstreams!</p>
+        </div>
+        <div class="impact-point">
+          <h3>🤗 Built customer relationships</h3>
+          <p>I helped reignite our relationship with our nursing client base with work that resonated with their experiences and represented their needs. We host a weekly workgroup of clients where we do research and show products and demos for feedback. This group was waning in engagement and excitement for a while, until I presented my initial charting demo! We had the most active engagement our facilitator had seen yet, and sparked lively discussion and critique. It was instrumental in reaching the final design, and so rewarding to chat about the work with nurses directly.</p>
+        </div>
+      </section>
 
     </div>
 
-    <div class="overview" style="background-color: var(--bg);">
-      <h2>Helping doctors and nurses avoid burnout with smarter clinical documentation.</h2>
-      <div class="facts"><h3>Timeline —</h3><p>Apr 2024 – Oct 2025<br>18 months</p></div>
-      <div class="facts"><h3>Role —</h3><p>UX Designer</p></div>
-      <div class="facts"><h3>Team —</h3><p>Oracle Health Design<br>Clinical SMEs<br>Product & Engineering</p></div>
-      <div class="facts"><h3>Skills —</h3><p>User Research<br>Design for AI<br>Enterprise UX<br>Figma</p></div>
+
+    <!-- ================= BOTTOM OF THE PAGE ================= -->
+    <nav class="more-work" aria-label="More work">
+      <p>up next</p>
+      <ul>
+        <li><a class="text-link" href="oraclepp.html">Oracle Patient Portal</a></li>
+        <li><a class="text-link" href="ns.html">Norfolk Southern</a></li>
+        <li><a class="text-link" href="bits.html">Bits of Good</a></li>
+        <li><a class="text-link" href="oracleintern.html">Oracle Procurement</a></li>
+      </ul>
+    </nav>
+
+    <div class="case-signoff">
+      <img src="evie-doodle.gif" width="84" height="123" alt="A looping drawing of Evie sketching on a tablet">
+      <p>thanks for sticking around! hope you liked my work ◝(⑅•ᴗ•⑅)◜<br>
+        <span class="muted">i love talking design, tech, and digital art! say hi on <a class="text-link" href="https://www.linkedin.com/in/eviemitchelldesign/" target="_blank" rel="noopener">linkedin</a> or <a class="text-link" href="mailto:eviemitch@gmail.com" target="_blank" rel="noopener">email</a> &lt;3</span></p>
     </div>
 
-
-    <div class="project-section reveal">
-      <h3>NDA Note</h3>
-      <p>This project is under NDA. Screens shown here are anonymized with my own components.</p>
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>The Problem</h3>
-
-      <p>For every 8 hours doctors spend with patients, they spend 5 hours struggling through unusable EHR software to record long, bloated, redundant notes, a task significantly associated with physician burnout. <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[1]</a> <a href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a> <a href="https://www.ama-assn.org/practice-management/digital-health/digging-data-cut-ehr-burdens-drive-burnout">[3]</a> It's imperative that accurate and thorough healthcare records are kept, but currently the burden falls on physicians.</p>
-
-      <h4> How might we make clinical notes a simple background task, and let clinicians focus on their patient? </h4>
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>The Solution</h3>
-
-      <h4> By empowering physicians with hands-off, automatic documentation, so all they need to do is make medical decisions and confirm the record.</h4>
-
-      <img src="clinical/intro.png" alt="Oracle Health clinical documentation introductory image, a full-screen image of a patient chart with a clinical note open, showing the inclusion of AI summaries and chart data. Uses an anonymized design system of white sheets on a subtle gray background, using pale lavender and vibrant purple as color accents.">
-
-    </div>
-
-    <div class="project-section"> </div>
-
-    <div class="divider"></div>
-    
-    <div class="project-section reveal">
-    
-      <h3>01 Understanding the User </h3>
-    
-      <p>I worked closely with our physician subject matter experts (shoutout Dr. Wall) to understand how documentation impacts their work and their emotional state. To most physicians: </p>   
-
-      <h4> Documentation is an intrusion, a frustration, and a distraction from what physicians really care about: their patients. </h4>
-
-      <p>It weaves its way into snatches of time wherever physicians can manage - glancing between their patient and the screen as they jot notes, dictating a few words in the hallway between visits, or in long hours tacked onto the end of a shift. Besides the practical difficulty of this task, doctors hate that they’re forced to spend less face-to-face time with patients. <!--The heavy burden actively makes them provide worse care by stealing away attention and adding to their stress.--> </p> 
-
-      <img src="clinical/need.png" alt="Pull quote of a doctor's primary user goal: As a Primary Care Physician, I need to document my patient's visit without disrupting my clinical workflow, so that I can focus fully on my patient and their treatment.">
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>02 Automation</h3>
-
-      <h4> Every minute saved writing is another minute of care and attention to their patient. So, let's first automate everything we can. </h4>
-
-      <p>When a visit starts, we already have a wealth of information at our hands: the patient's medical history, the type of appointment they booked, the reason for visit, and tons of extra detail from their pre-visit registration forms, or gathered by the nurse during intake. Using this, we can:
-      </p>
-
-      <div class="keebr-columns">
-        <div class="pcol"> <h4> Kickstart a templated note customized to this patient and this visit. </h4> </div>
-        <div class="pcol"> <img src="clinical/kickstart.png" alt="Screenshot of a minimized Notes module in the bottom right of the chart screen, showing a draft Annual Wellness Visit note that's been automatically created by the AI system."></div>
-      </div>
-      
-      <div class="keebl-columns">
-        <div class="pcol"> <img src="clinical/kickstarted.png"> </div>
-        <div class="pcol"> <h4>Draft a note with AI using what we know, the patient's history and why they're here.</h4> </div>
-      </div>
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>03 Audio Analysis</h3>
-
-      <h4>
-        Then, ambient listening during a visit can fill in many of the gaps.
-      </h4>
-
-      <p>
-        With Oracle Health's clinical assistant, doctors can use their mobile device to record visit audio, and place it unobtrusively face-down and on the counter. As they discuss the situation face-to-face with their patient, the assistant extracts information from the audio, contributing to the note and even drafting orders for the physician to confirm later.
-      </p>  
-
-      <img src="clinical/visitaudio.png" alt="Speech bubbles of a doctor-patient conversation. The patient says: My stomach pain's about a 4 right now, but was way woorse this morning. The physician says: Hmm, your abdomen's soft and non-tender... Since the symptoms have persisted for 4 days, I'm going to prescribe you Metoclopramide.">
-
-      <div class="keebl-columns">
-        <div class="pcol"> <img src="clinical/addaudio.gif" alt="Animated gif of the note being contributed to by AI, based on content extracted from the visit audio recording, based on the speech bubble conversation shown." style="max-width:700px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;"></div>
-        <div class="pcol"> <h4> Based on the analyzed audio, relevant information is added to the note in generated text.</h4> </div>
-      </div>
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>03 Capturing the Internal</h3>
-
-      <p>But, automatically writing a note won't solve everything.</p>
-
-      <h4>Notes don't just describe what happened in a visit:  they're a narrative of the physician's medical decision-making and the evidence supporting it.</h4>
-
-      <p>So, every data point that contributes to their assessment, every differential diagnoses they rule out in their heads, and the reasoning behind the plan they prescribe must be laid out for a legal, regulatory, and medical trail. </p>
-
-      <P>Physicians navigate through the patient's record, gathering lab results, trends in vitals, details from previous visit notes, etc. and adding them to the note. "Copy-pasting" is a major legal no-no in medicine, so we created a shortcut in our software to collect this information with clear attribution and hyperlinks back to the original source.</P>
-
-      <img src="clinical/need2.png" alt="Pull quote of a doctor's secondary user goal: As a Primary Care Physician, I need to collect my thoughts and important information for medical decision-making, so that I can record and communicate my patient's story.">
-
-      <h4>So, I designed an optimized view for navigating the chart and working on the note side-by-side, with flexible workflows to collect information.</h4>
-
-      <p>Oracle's conversational Ask Oracle framework facilitates these workflows. Users can use commands (verbal or typed) to add results, or drag-and-drop any information they need. We can intelligently place the content in the note's structure, and allow doctors to rearrange and add commentary freely. </p>
-
-      <img src="clinical/tag.gif" alt="Animated GIF of the full-screen chart, with a side panel showing a compressed version of the in-progress note. The user taps into the search bar and commands: Add his last PFT FEV1 results to my note. It aniamtes the search results appearing in a drop-down window, and then the visualization of this result animates sliding across the screen into the note, adapting automatically to fit visually in the note side panel." style="margin-top: 20px; border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;">
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>04 Raising Quality Bar</h3>
-
-      <p>Another learning from my physician partner is that since the transition to electronic health records, physician notes have gotten <b>worse,</b> not better.  For repeat visits or long-term treatments, it became common practice to duplicate the old note and write more on top. EHR notes have grown 60% longer and 11% more redundant over the last few years. <a href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[3]</a></p>
-      <h4> I saw an opportunity to improve the quality of note outcomes, not just the experience of making them, by integrating Oracle’s biggest differentiator - our AI capabilities.</h4>
-      <img src="clinical/multimodal.png" alt="Diagram of the different modalities of note-writing. The physician Writes, collects, and dicates. AI can automatically add visit audio, AI summaries, and chart data. Then, AI collates information from these sources and trims redundancy. The physician performs a quick review, and the note is finalized.">
-      <h4>Allowing doctors to securely sign it into record with one click.</h4>
-      <img src="clinical/sign.gif" alt="Animated gif of a physician finalizing a completed note in one click, adding his e-signature block and removing it from the Drafts section." style="border-radius:8px; box-shadow: 1px 1px 6px #D2D2DE;">
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>05 Translating to Nursing</h3>
-
-      <p>As the experience definition phase of documentation wrapped up, with a roadshow of my final demos across the VP level, I continued to work with developers on incremental implementation.</p>
-
-      <p>At the same time, the nursing product team reached out - they were starting to redesign forms-based charting, and asked for me specifically based on my reputation with the other documentation PMs! So I took on a new project, building a great collaboration with our nursing experts and revolutionizing the charting experience.</p>
-
-      <img src="clinical/charting.png" alt="The first frame of a forms-based charting experience.">
-
-      <p> Nurses shares the same goal; to record accurate, thorough information without breaking their attention from their patient. But, form-based charting involves many fields of discrete data, rather than a written narrative. Just like for notes, extracting information from the visit audio was a huge advantage. Beyond that, I focused on three unique innovations: </p>
-
-      <div class="keebl-columns">
-
-        <div class="pcol"> <img src="clinical/nav.png" alt="A screenshot showing the minimal, informative navigation bar in the form experience, which highlights completeness progress, and allows the user to quickly jump between sections, or add another form on the fly."></div>
-
-        <div class="pcol"> <h4> A sequential wizard experience for queueing up form sets, and quick keyboard macros for entry and navigation. </h4> </div>
-
-      </div>
-
-      <div class="keebr-columns">
-
-        <div class="pcol"> <h4> Fill redundant fields and intelligently uptake the patient's last answer, to remove repetitive entry. </h4> </div>
-
-        <div class="pcol"> <img src="clinical/prefill.png" alt="A section of the intake form which highlights fields that can be filled in from the patient's pre-visit registration, or sustained over time."></div>
-
-      </div>
-
-      <div class="keebl-columns">
-
-        <div class="pcol"> <img src="clinical/indicators.png" alt="Collection of screenshots showing visual design within the form workflow: visualizations of trends over time, calculated values, unit conversions, and criticality indicators for vitals like temperature."></div>
-
-        <div class="pcol"> <h4> Ease understanding by highlighting trends over time, calculated metrics, and criticality indicators. </h4> </div>
-
-      </div>
-
-    </div>
-
-    <div class="project-section reveal">
-
-      <h3>06 Impact ✨</h3>
-
-      <h4> 🚀 Shipped 2 products! </h4>
-
-      <p>Led 2 workstreams end-to-end across 18 months, from early research and concept exploration to providing dev support for shipped code.</p>
-
-      <h4> 🧠 Drove EHR framework and built reusable patterns </h4>
-
-      <p> I designed patterns that were picked up and scaled across the EHR - my information-gathering feature made it into messaging and financial administrative products; the side-by-side "review and do" modality applied to acute and specialty workflows; my AI strategy drove the direction of our automatic meds reconciliation workflow; my charting guided workflow faciliated the medication administration workstream.</p>
-
-      <p>It feels amazing to not only see my designs in action, but also see my influence across other products and workstreams!</p>
-
-      <h4> 🤗 Built customer relationships </h4>
-
-      <p> I helped reignite our relationship with our nursing client base with work that resonated with their experiences and represented their needs. We host a weekly workgroup of clients where we do research and show products/demos for feedback. This group was waning in engagement and excitement for a while, until I presented my initial charting demo! We had the most active engagement our facilitator had seen yet, and sparked lively discussion and critique. It was instrumental in reaching the final design, and so rewarding to chat about the work with nurses directly.</p>
-
-    </div>
-
-    <div class="project-section">
-
-      <p style="text-align: center;"> Up next: <a href="oraclepp.html">Oracle Patient Portal</a> / <s style="color: var(--subtle);">Oracle Clinical</s> / <a href="oracleintern.html">Oracle Procurement</a> / <a href="ns.html">Norfolk Southern</a> / <a href="bits.html">Bits of Good</a> / <a href="keeb.html">Keeb</a> / <a href="spence.html">Spence</a></p>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <footer class="feet reveal">
-
-      <div class="farewell"><p>thanks for sticking around! hope you liked my work◝(⑅•ᴗ•⑅)◜<br> i love talking design, tech, and digital art! hit me on <a href="https://www.linkedin.com/in/eviemitchelldesign/" style="text-decoration: underline;">linkedin</a> or <a href="mailto:eviemitch@gmail.com" style="text-decoration: underline;">email</a> to connect <3</p></div>
-
-      <div class="climb"><p>🧗‍♀ <a href="#" style="text-decoration: underline;">back to top! </a></p></div>
-
+    <footer class="site-footer">
+      <span>[ v4 ]</span>
+      <a class="text-link" href="#">back to top</a>
     </footer>
+  </main>
 
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
