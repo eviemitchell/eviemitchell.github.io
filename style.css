@@ -423,6 +423,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   .header-inner { height: var(--header); padding: 0 var(--side-padding); }
   .site-nav { gap: 16px; font-size: 15px; }
   .site-nav a, .logo { min-height: 44px; display: inline-flex; align-items: center; }
+  .logo { white-space: nowrap; }   /* keep "evie mitchell" on one line */
 
   .page {
     display: block;
@@ -508,6 +509,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+
+/* small phones: tighten the top bar so the logo and all four links fit on one line */
+@media (max-width: 400px) {
+  .logo { gap: 6px; }
+  .site-nav { gap: 10px; font-size: 14px; }
+}
+@media (max-width: 350px) {
+  .site-nav { gap: 7px; }
 }
 
 
