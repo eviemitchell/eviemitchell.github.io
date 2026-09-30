@@ -12,6 +12,7 @@
       Divider lines grow in from the left the same way.
    C. IMAGE VIEWER: click an image to see it full screen.
    D. CLICK BURSTS: a little hand-drawn sunburst wherever you click.
+   E. VERSION CARD: fills the footer's "v4" card with live GitHub numbers.
 
    To change the bubble words, edit data-word="..." in index.html.
    To tweak the bursts, change the numbers in BURST SETTINGS below.
@@ -312,3 +313,51 @@ document.addEventListener("click", function (event) {
   // Clean up once it has faded out.
   setTimeout(function () { burst.remove(); }, 1400);
 });
+
+
+/* ---------- E. VERSION CARD (every page) ----------
+   Asks GitHub for the site's commit count and last update, then puts them
+   in the footer's "v4" card. The numbers already in the HTML stay put if
+   GitHub can't be reached. Saved for the visit, so it only asks once. */
+const REPO = "eviemitchell/eviemitchell.github.io";
+const commitsText = document.querySelector("[data-commits]");
+const updatedText = document.querySelector("[data-updated]");
+
+function showVersion(info) {
+  commitsText.textContent = info.commits;
+  updatedText.textContent = info.updated;
+}
+
+// "2026-09-30T18:29:41Z" → "09/30/2026"
+function formatDate(iso) {
+  const d = new Date(iso);
+  return String(d.getMonth() + 1).padStart(2, "0") + "/" +
+    String(d.getDate()).padStart(2, "0") + "/" + d.getFullYear();
+}
+
+if (commitsText && updatedText) {
+  let saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem("version-info")); } catch (e) {}
+
+  if (saved) {
+    showVersion(saved);
+  } else {
+    // Ask for one commit per page: the number of the last page is the total.
+    fetch("https://api.github.com/repos/" + REPO + "/commits?per_page=1")
+      .then(function (response) {
+        if (!response.ok) throw new Error("GitHub said " + response.status);
+        const last = (response.headers.get("link") || "").match(/[?&]page=(\d+)>; rel="last"/);
+        return response.json().then(function (commits) {
+          return {
+            commits: last ? last[1] : commits.length,
+            updated: formatDate(commits[0].commit.committer.date)
+          };
+        });
+      })
+      .then(function (info) {
+        showVersion(info);
+        try { sessionStorage.setItem("version-info", JSON.stringify(info)); } catch (e) {}
+      })
+      .catch(function () {});   // keep the numbers already in the HTML
+  }
+}

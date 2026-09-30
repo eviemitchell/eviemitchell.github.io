@@ -353,12 +353,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
    when you move away. */
 .photos-print .pic {
   padding: 10px 10px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px 16px 16px 0;   /* rounded, with a sharp bottom-left corner like the speech bubbles */
   background: #FFFFFF;
   box-shadow:
     0 1px 1.5px rgb(28 28 26 / 0.14),         /* tight contact shadow */
     0 3px 6px -1px rgb(28 28 26 / 0.10);      /* soft falloff */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+/* the photo inside its card: all 4 corners rounded */
+.photos-print .pic img { border-radius: 10px; }
 .photos-print .pic figcaption {
   display: flex;
   align-items: center;
@@ -375,8 +379,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 
 @media (max-width: 960px) {
-  .photos-print .pic { padding: 6px 6px 0; }
-  .photos-print .pic figcaption { min-height: 52px; padding: 10px 4px 12px; }
+  .photos-print .pic { padding: 6px 6px 0; }  .photos-print .pic figcaption { min-height: 52px; padding: 10px 4px 12px; }
   .photos-print .strip { flex-basis: 44%; padding: 10px 20px 0; }
   .photos-print .strip::before { left: 6px; }
   .photos-print .strip::after { right: 6px; }
@@ -408,6 +411,38 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   border-top: 1px solid var(--line);
   font-size: 14px;
   color: var(--muted);
+}
+
+/* "v4": links to the site's GitHub repo. Hover it (or tab to it) to show a
+   little card, styled like the about photos' white prints.
+   script.js fills in the live GitHub numbers. */
+.version { position: relative; }
+.version-card {
+  position: absolute;
+  left: -8px;
+  bottom: calc(100% + 12px);
+  z-index: 10;
+  width: max-content;
+  max-width: min(320px, 90vw);
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px 16px 16px 0;   /* matches the about photo cards */
+  background: #FFFFFF;
+  box-shadow:
+    0 2px 3px rgb(28 28 26 / 0.10),
+    0 12px 18px -6px rgb(28 28 26 / 0.18);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+.version-label:hover + .version-card,
+.version-label:focus-visible + .version-card {   /* tabbing to it with the keyboard */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
