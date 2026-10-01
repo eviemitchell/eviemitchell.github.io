@@ -177,8 +177,24 @@
       <!-- ================= 05 RAISING THE QUALITY BAR ================= -->
       <section class="case-section" id="quality">
         <h2><span class="section-number">05</span>Raising the quality bar</h2>
-        <p>Another learning from my physician partner: since the transition to electronic health records, physician notes have gotten <strong>worse</strong>, not better. For repeat visits or long-term treatments, it became common practice to duplicate the old note and write more on top. EHR notes have grown 60% longer and 11% more redundant over the last few years. <a class="text-link sources" href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a></p>
-        <p class="lead">I saw an opportunity to improve the quality of note outcomes, not just the experience of making them, by integrating Oracle's biggest differentiator: our AI capabilities.</p>
+        <p>Another learning from my physician partner: since the transition to electronic health records, physician notes have gotten <strong>worse</strong>, not better. For repeat visits or long-term treatments, it became common practice to duplicate the old note and write more on top. In the decade after hospitals moved to EHRs, notes grew 60% longer, and more than half of a typical note became text copied from the last one. <a class="text-link sources" href="https://www.techtarget.com/searchhealthit/news/366579094/Growing-Length-of-EHR-Clinical-Notes-Raises-Clinician-Burnout-Concerns">[2]</a></p>
+
+        <!-- note bloat chart: --length is the note's length (2018 = 100%),
+             --share is how much of it was new writing vs. copied from the last note -->
+        <figure class="bloat-chart reveal">
+          <p class="sr-only">The median clinical note grew from 401 words in 2009 to 642 words in 2018. The share copied from the patient's last note rose from 47.9% to 58.8%, so new writing barely grew while copied text nearly doubled.</p>
+          <div class="bloat-rows" aria-hidden="true">
+            <span class="label">2009</span>
+            <span class="note-bar" style="--length: 62.5%"><span class="is-new" style="--share: 52.1"></span><span class="is-copied" style="--share: 47.9"></span></span>
+            <span class="value">401 words</span>
+            <span class="label">2018</span>
+            <span class="note-bar is-later" style="--length: 100%"><span class="is-new" style="--share: 41.2"></span><span class="is-copied" style="--share: 58.8"></span></span>
+            <span class="value">642 words</span>
+          </div>
+          <figcaption class="chart-caption"><span class="legend-swatch is-new"></span>new writing <span class="legend-swatch is-copied"></span>copied from the patient's last note</figcaption>
+        </figure>
+
+        <p class="lead">I saw an opportunity to improve the quality of note outcomes, not just the experience of making them, by leveraging Oracle AI to draft, edit, and trim notes for conciseness and accuracy.</p>
         <figure class="shot">
           <a href="clinical/multimodal.png"><img src="clinical/multimodal.png" loading="lazy" alt="Diagram of multimodal note writing. The physician writes, collects, and dictates. AI automatically adds visit audio, AI summaries, and chart data, then collates the sources and trims redundancy. The physician does a quick review and the note is finalized."></a>
         </figure>

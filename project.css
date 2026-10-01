@@ -57,6 +57,54 @@
 .shot-cover { margin-top: 48px; }
 
 
+/* ---------- MOVING SCREENS: GIFS AND VIDEOS ----------
+   <figure class="motion"> around an <img> (gif) or a <video autoplay loop muted playsinline>.
+   They loop on their own; click one to pause it (script.js). */
+.motion { margin: 32px 0 0; }
+.motion img,
+.motion video,
+.motion canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow:
+    0 1px 1.5px rgb(28 28 26 / 0.14),         /* same soft shadow as the about photo prints */
+    0 3px 6px -1px rgb(28 28 26 / 0.10);
+  cursor: pointer;
+}
+.motion [hidden] { display: none; }
+.split .motion { margin-top: 20px; }
+.numbered .motion { margin-top: 16px; }
+
+/* a split with a tall phone recording: the phone gets a narrow column
+   beside the text, instead of the usual wide one */
+.split-phone .motion { max-width: 300px; margin-left: auto; margin-right: auto; padding: 0 40px; }   /* room on both sides of the phone */
+@media (min-width: 961px) {
+  .split.split-phone { grid-template-columns: minmax(0, 1fr) 320px; margin-top: 24px; }
+  .split-phone .motion { margin: 0; }
+}   /* the moving GIF hides while its frozen frame shows */
+.motion-frame { position: relative; }
+/* the play button that shows while it's paused */
+.motion-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  background: rgb(28 28 26 / 0.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7 L17 12 L9 17Z' fill='white'/%3E%3C/svg%3E") center / 28px no-repeat;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.motion-frame.is-paused::after { opacity: 1; transform: scale(1); }
+.motion-frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 18px; }
+
+
 /* ---------- SIDE-BY-SIDE TEXT AND IMAGE ----------
    Wrap a lead line and an image in <div class="split">. On desktop
    they sit side by side, in the same order as in the HTML: put the image
@@ -140,6 +188,31 @@
 .hours-bar.is-documenting { width: 62.5%; background: var(--accent); }
 .chart-caption,
 .case-section .chart-caption { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+
+
+/* ---------- NOTE BLOAT CHART ----------
+   One bar per year. Its width is the note's length (style="--length: 62.5%"),
+   split into new writing (purple) and text copied from the last note (gray
+   stripes). Set each part's share with style="--share: 52.1". */
+.bloat-chart { margin: 28px 0 0; }
+.bloat-rows {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 84px;
+  gap: 12px 14px;
+  align-items: center;
+  font-size: 15px;
+}
+.bloat-rows .label { color: var(--muted); }
+.bloat-rows .value { text-align: right; }
+.note-bar { display: flex; gap: 2px; width: var(--length); height: 14px; transform-origin: left; }
+.note-bar span { flex: var(--share) 1 0; min-width: 0; }
+.note-bar .is-new { border-radius: 7px 0 0 7px; background: var(--accent); }
+.note-bar .is-copied {
+  border-radius: 0 7px 7px 0;
+  background: repeating-linear-gradient(-45deg, #D8D6CF 0 3px, #ECEAE4 3px 6px);
+}
+.legend-swatch.is-new { background: var(--accent); }
+.legend-swatch.is-copied { background: repeating-linear-gradient(-45deg, #D8D6CF 0 2px, #ECEAE4 2px 4px); margin-left: 12px; }
 
 
 /* ---------- IMPACT NUMBERS ---------- */
@@ -226,12 +299,15 @@
    script.js adds "is-visible" to anything with class="reveal" once
    you scroll to it. Without JavaScript, the charts just show as is. */
 .js .reveal .hours-bar,
+.js .reveal .note-bar,
 .js .reveal .bar-after { transform: scaleX(0); }
 .js .reveal .clock-wedge { stroke-dasharray: 0 60; }
 .js .reveal .impact-sparkle { opacity: 0; transform: scale(0); }
 
 .js .reveal.is-visible .hours-bar,
+.js .reveal.is-visible .note-bar,
 .js .reveal.is-visible .bar-after { transform: scaleX(1); transition: transform 1s cubic-bezier(.3, .8, .3, 1); }
+.js .reveal.is-visible .note-bar.is-later { transition-delay: 0.2s; }
 .js .reveal.is-visible .hours-bar.is-documenting { transition-delay: 0.2s; }
 .js .reveal.is-visible .impact-row:nth-child(2) .bar-after { transition-delay: 0.15s; }
 .js .reveal.is-visible .clock-wedge { stroke-dasharray: 6.5 60; transition: stroke-dasharray 1.1s cubic-bezier(.3, .8, .3, 1) 0.3s; }
@@ -448,6 +524,7 @@
 /* respect "reduce motion": show the charts finished, no animation */
 @media (prefers-reduced-motion: reduce) {
   .js .reveal .hours-bar,
+  .js .reveal .note-bar,
   .js .reveal .bar-after { transform: none; }
   .js .reveal .clock-wedge { stroke-dasharray: 6.5 60; }
   .js .reveal .impact-sparkle { opacity: 1; transform: none; }

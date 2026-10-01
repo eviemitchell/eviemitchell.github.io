@@ -75,8 +75,10 @@
 
     <div class="case-body">
 
+      <!-- ================= THE PROBLEM ================= -->
       <section class="case-section" id="approach">
         <h2 style="color:var(--accent)">The Problem</h2>
+        <p>Managing your own healthcare means keeping track of a lot: upcoming appointments, prescriptions, care reminders, bills, and messages with your care team. Many of our users deal with chronic health conditions and an overwhelming amount of medical paperwork and jargon.</p>
         <p class="case-question">How might we empower patients to understand and orchestrate their own care?</p>
           <div class="space-xl"></div> 
 
@@ -84,9 +86,13 @@
         <p class="lead">With a tailored dash serving the user exactly what they need, when they need it.</p>
       </section>
 
+      <hr class="section-divider">
+
+
+      <!-- ================= 01 CONTEXT ================= -->
       <section class="case-section" id="context">
-        <h2>Context</h2>
-        <p>After my recruitment to this new project, we made it from 0 to launch in under 4 months! I was responsible for the home dashboard, messaging, and settings/account management.</p>
+        <h2><span class="section-number">01</span>Context</h2>
+        <p>Oracle Health determined in October 2025 to rebuild their patient engagement experience from scratch. I was rescruited for this effort, and focused on designing workflows and interaction models.</p>
         <figure class="phases reveal">
           <div class="phase-track">
             <div class="phase" style="--length: 1"><span class="phase-bar"></span><span class="phase-label"><strong>month 1</strong></span></div>
@@ -95,8 +101,89 @@
             <div class="phase" style="--length: 1"><span class="phase-bar"></span><span class="phase-label"><strong>month 4</strong></span></div>
             <div class="phase-marker"><svg viewBox="-32 -32 64 64" aria-hidden="true"><path d="M0 -30 C3 -6 6 -3 30 0 C6 3 3 6 0 30 C-3 6 -6 3 -30 0 C-6 -3 -3 -6 0 -30Z"/></svg><span class="phase-label"><strong>GA launch</strong>on the App Store</span></div>
           </div>
-          <figcaption class="chart-caption">Recruited in October 2025, live in under four months.</figcaption>
         </figure>
+        <p>Over the year I've worked on this project, I progressed from an individual designer responsible for home and settings to one of two lead designers for the product, owning half of all features and building the framework and design system. I'm now responsible for the home dashboard, messaging, settings and account management, the health record, and continued expansion of the design system. </p> <!-- That umbrella held a lot of interesting problems, but this case study focuses on four:</p>
+        <ol class="numbered">
+          <li>The home dashboard, and a recommended care engine</li>
+          <li>A profile-switching framework for medical proxies</li>
+          <li>Secure messaging, with conflicting patient and clinician goals</li>
+          <li>Shipping a brand new design system fast, with lots of QA alongside dev</li>
+        </ol>
+        <p>Over the year I've worked on this project, I progressed from an individual designer responsible for home and settings to one of two lead designers for the product, owning half of all features and building the framework and design system.</p>
+      </section>
+-->
+      </section>
+
+      <!-- ================= 02 HOME DASHBOARD ================= -->
+      <section class="case-section" id="home">
+        <h2><span class="section-number">02</span>Home dashboard</h2>
+        <p>The homepage is the first thing a patient sees every time they open the app. It needs to orient them to where they are in their health journey, and clearly lead them through what they need to do next.</p>
+        <p class="user-goal"><span class="user-goal-label">User goal</span>As a <b>patient</b>, I need to know what's coming up in my care and what I need to do, so that I can <b style="color: var(--accent)">stay on top of my health without feeling overwhelmed.</b></p>
+        <p class="lead">I designed it as a priority-ranked feed: the most time-sensitive tasks always float to the top.</p>
+        <p>An appointment tomorrow or an unread message from your doctor comes first, and the health summary below walks you from a high-level snapshot down to granular data points. The goal was to focus patients on actionable information, using patterns they already know from consumer mobile apps.</p>
+        <!-- loops on its own; click (or press Enter) to pause and play -->
+        <figure class="motion">
+          <img src="pp/home.gif" width="1280" height="719" alt="The patient app's home dashboard: a personalized greeting with the next visit, action prompts like completing questionnaires and paying a bill, and upcoming appointments.">
+        </figure>
+
+        <div class="impact-point">
+          <div class="space"></div>
+          <p>Beyond showing what's already scheduled, the dashboard recommends care a patient might need next, to encourage them to proactively learn about and plan their own health. But patients are flooded with generic health advice. A recommendation that could apply to anyone is easy to ignore, and starts to feel like noise in the app.</p>
+        </div>
+        <p class="lead">For a patient to care about a recommendation, it has to be clear why it's recommended for <em>them</em>.</p>
+        <p>So every recommendation is personal, and says so. Each card shows the reasoning behind it, drawn from that patient's own record: "based on your family history", or your age, or your last visit. Because recommendations are ranked by how relevant they are to this person, the one at the top is the one that matters most to them, not a reminder everyone else is getting too. We also serve up the correct action to close out that gap, like scheduling a visit or finding lab locations nearby. </p>
+        <!-- VISUAL IDEA: a recommended care card, showing its "based on your..." reasoning and the schedule / defer / learn more options -->
+      </section>
+
+
+      <!-- ================= 03 MEDICAL PROXIES ================= -->
+      <section class="case-section" id="proxies">
+        <h2><span class="section-number">03</span>Medical proxy account framework</h2>
+        <p>Medical proxies, like a parent managing their kid's care or an adult child helping an aging parent, are one of the messiest problems in patient-facing health software. A proxy isn't a full account holder, but they're not just a guest either. Their access can vary by relationship, the patient's age, specific legal arrangements, and state/country-specific regulations.</p>
+        <p class="lead">Making sure only the right information reaches the right people is critical for patient safety.</p>
+        <p>This was the most systems-thinking-heavy part of the project. I needed a permission model flexible enough to handle a huge range of real-world configurations, but simple enough that any patient could understand and manage it on their own.</p>
+        <p class="user-goal"><span class="user-goal-label">User goal</span>As a <b>parent</b>, I need to manage my child's care alongside my own, so that I can <b style="color: var(--accent)">always know whose information I'm looking at, and what I can do.</b></p>
+        <!-- text beside a tall phone GIF -->
+        <div class="split split-phone">
+          <div class="split-text">
+            <p class="lead">Switching between profiles is always one tap away.</p>
+            <p>I worked closely with product and engineering to map out every state a proxy relationship could be in (inviting someone, accepting, adjusting access, revoking it) and designed each step so the consequences of a choice are spelled out in plain language before you confirm anything.</p>
+          </div>
+          <figure class="motion">
+            <img src="pp/proxy%20switcher.gif" width="794" height="1716" alt="The proxy switcher: a user switches from their own profile to a family member's, and the app updates to show that person's care.">
+          </figure>
+        </div>
+      </section>
+<!--
+
+     ================= 04 SECURE MESSAGING ================= 
+      <section class="case-section" id="messaging">
+        <h2><span class="section-number">04</span>Secure messaging</h2>
+        <p>Secure messaging has a unique mix of patient- and clinician-facing needs. Patients show up expecting something like texting or email, while care teams have complex routing rules, triage, and compliance requirements shaping how they respond.</p>
+        <p class="lead">The goal was to simplify the complicated routing happening in the background, and set clear expectations for how and when providers would respond.</p>
+        <p>I connected with our clinical experience partners to understand physician needs, like carefully limiting which messages actually make it into a doctor's inbox. On the patient side, I focused on:</p>
+        <ol class="numbered">
+          <li>Making it clear who you're messaging, and what their role is, before you start typing</li>
+          <li>Letting patients flag what kind of message they're sending (a clinical question, an admin request, a prescription refill) so it's routed correctly</li>
+          <li>Telling people upfront how long a response might take</li>
+          <li>Routing general, non-critical questions through Ask Oracle, our conversational AI, to save clinicians from extra administrative burden</li>
+        </ol>
+        <p>Behind the scenes, I also designed support in the admin console, for a rare user in health IT: the health system administrator who configures how all of this works.</p>
+        VISUAL IDEA: starting a new message: picking a recipient and message type, with the expected response time shown upfront
+      </section>
+-->
+
+      <!-- ================= 05 SHIPPING ================= -->
+      <section class="case-section" id="shipping">
+        <h2><span class="section-number">04</span>Shipping</h2>
+        <p>To get our MVP shipped in 4 months, we worked very closely with engineering. And once their work was near complete, our job became making sure what shipped actually matched what we designed.</p>
+        <p class="lead">I logged and tracked visual and functional bugs across the whole product, working directly with engineers to resolve them before launch. We hit 100% design parity at GA.</p>
+      </section>
+
+
+      <!-- ================= 06 IMPACT ================= -->
+      <section class="case-section" id="impact">
+        <h2><span class="section-number">05</span>Impact ✨</h2>
         <ul class="metrics">
           <li><strong class="metric-number">&lt;4 mo</strong> <span class="metric-label">zero to launch</span></li>
           <li><strong class="metric-number">13</strong> <span class="metric-label">users validated my proxy messaging model</span></li>
@@ -104,23 +191,11 @@
         </ul>
       </section>
 
-      <section class="case-section" id="owned">
-        <h2>Problems I owned</h2>
-
-        <p>Over the year I've worked on this project, I progressed from an individual designer, responsible for home and settings only, to one of two lead designers for the product, owning half of all features and building the framework and design system.</p>
-        <ol class="numbered">
-          <li>Implementing an effective home dashboard and proactive care engine</li>
-          <li>Profile-switching framework for medical proxies</li>
-          <li>Secure messaging with conflicting patient and clinician goals</li>
-          <li>Working closely with dev to ship our brand new design system fast, with quality assurance</li>
-        </ol>
-      </section>
     <div class="space"></div>
 
-        <p>Full case study details are available on request. But please,</p>
-        <a class="cta" href="https://apps.apple.com/us/app/oracle-health-patient-portal/id6736528583" target="_blank">Check us out in the App Store ↗</a>
+        <p>The portal is still just an MVP: we ship new features every month, and continue to go live in health systems around the world! Further case study details are available on request. But please,</p>
+        <a class="cta" href="https://apps.apple.com/us/app/oracle-health-patient-portal/id6736528583" target="_blank" rel="noopener">Check us out in the App Store ↗</a>
     </div>
-
 
     <!-- ================= BOTTOM OF THE PAGE ================= -->
     <nav class="more-work" aria-label="More work">

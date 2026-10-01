@@ -13,6 +13,7 @@
    C. IMAGE VIEWER: click an image to see it full screen.
    D. CLICK BURSTS: a little hand-drawn sunburst wherever you click.
    E. VERSION CARD: fills the footer's "v4" card with live GitHub numbers.
+   F. GIFS AND VIDEOS: click one (or press Enter) to pause or play it.
 
    To change the bubble words, edit data-word="..." in index.html.
    To tweak the bursts, change the numbers in BURST SETTINGS below.
@@ -360,4 +361,164 @@ if (commitsText && updatedText) {
       })
       .catch(function () {});   // keep the numbers already in the HTML
   }
+}
+
+
+/* ---------- F. GIFS AND VIDEOS (anything in <figure class="motion">) ----------
+   They loop on their own. Click one (or tab to it and press Enter) to pause it
+   right where it is, and again to play. With "reduce motion" on, they start paused.
+
+   Browsers can't pause a GIF, so we play it ourselves: the browser's image
+   decoder hands us one frame at a time, and we draw each onto a <canvas> for
+   as long as the GIF says. Pausing just stops on the frame that's showing.
+   (Browsers without the decoder get a fallback that freezes on the first frame.) */
+document.querySelectorAll(".motion").forEach(function (figure) {
+  const media = figure.querySelector("video, img");
+  if (!media) return;
+
+  // wrap it, so the play button can sit on top
+  const frame = document.createElement("div");
+  frame.className = "motion-frame";
+  frame.tabIndex = 0;
+  frame.setAttribute("role", "button");
+  media.before(frame);
+  frame.appendChild(media);
+
+  const label = media.alt || media.getAttribute("aria-label") || "animation";
+  const player = media.tagName === "VIDEO" ? videoPlayer(media) : gifPlayer(media, label);
+
+  function update() {
+    frame.classList.toggle("is-paused", player.isPaused());
+    frame.setAttribute("aria-label", (player.isPaused() ? "Play: " : "Pause: ") + label);
+  }
+  function toggle() {
+    if (player.isPaused()) player.play(); else player.pause();
+    update();
+  }
+
+  player.onChange = update;
+  frame.addEventListener("click", toggle);
+  frame.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggle();
+    }
+  });
+
+  if (reduceMotion.matches) player.pause();   // "reduce motion": start paused
+  update();
+});
+
+// A video already knows how to pause.
+function videoPlayer(video) {
+  const player = {
+    isPaused: function () { return video.paused; },
+    play: function () { video.play().catch(function () {}); },
+    pause: function () { video.removeAttribute("autoplay"); video.pause(); },
+    onChange: null
+  };
+  video.addEventListener("play", function () { if (player.onChange) player.onChange(); });
+  video.addEventListener("pause", function () { if (player.onChange) player.onChange(); });
+  return player;
+}
+
+// A GIF, played frame by frame so it can pause on the current frame.
+function gifPlayer(img, label) {
+  const canvas = document.createElement("canvas");
+  canvas.hidden = true;
+  canvas.setAttribute("role", "img");
+  canvas.setAttribute("aria-label", label);
+  img.after(canvas);
+  const context = canvas.getContext("2d");
+
+  let decoder = null;
+  let frameCount = 0;
+  let index = 0;        // the next frame to show
+  let paused = false;
+  let timer = null;
+  let run = 0;          // bumps on every play/pause, so an old loop knows to stop
+
+  // Show one frame, then wait as long as the GIF says before the next.
+  function step(thisRun) {
+    decoder.decode({ frameIndex: index }).then(function (result) {
+      if (thisRun !== run) { result.image.close(); return; }
+      context.drawImage(result.image, 0, 0);
+      // browsers treat tiny GIF delays as 0.1s, so we do too
+      const ms = (result.image.duration || 0) / 1000;
+      result.image.close();
+      index = (index + 1) % frameCount;
+      if (!paused) timer = setTimeout(function () { step(thisRun); }, ms < 20 ? 100 : ms);
+    }).catch(function () {});
+  }
+
+  // Load the GIF into the decoder, then swap the <img> for the canvas.
+  function start() {
+    fetch(img.currentSrc || img.src)
+      .then(function (response) { return response.arrayBuffer(); })
+      .then(function (data) {
+        decoder = new ImageDecoder({ data: data, type: "image/gif" });
+        return Promise.all([decoder.tracks.ready, decoder.completed]);   // the frame list, and all the data
+      })
+      .then(function () {
+        frameCount = decoder.tracks.selectedTrack.frameCount;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        img.hidden = true;
+        canvas.hidden = false;
+        run++;
+        step(run);   // draws the first frame, and keeps going unless paused
+      })
+      .catch(useFallback);
+  }
+
+  // No decoder (or it failed): freeze by snapshotting the <img> instead.
+  // Browsers only let us copy a GIF's first frame, so it rewinds to the start.
+  let fallback = false;
+  function useFallback() {
+    fallback = true;
+    decoder = null;
+    canvas.hidden = !paused;
+    img.hidden = paused;
+    if (paused) snapshot();
+  }
+  function snapshot() {
+    if (!img.complete || !img.naturalWidth) {
+      img.addEventListener("load", function () { if (paused) snapshot(); }, { once: true });
+      return;
+    }
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    context.drawImage(img, 0, 0);
+  }
+
+  if ("ImageDecoder" in window) {
+    if (img.complete) start(); else img.addEventListener("load", start, { once: true });
+  } else {
+    useFallback();
+  }
+
+  return {
+    isPaused: function () { return paused; },
+    pause: function () {
+      paused = true;
+      run++;
+      clearTimeout(timer);
+      if (fallback) {
+        snapshot();
+        img.hidden = true;
+        canvas.hidden = false;
+      }
+    },
+    play: function () {
+      paused = false;
+      run++;
+      if (fallback) {
+        img.hidden = false;
+        canvas.hidden = true;
+      } else if (decoder && frameCount) {
+        step(run);
+      }
+    },
+    onChange: null
+  };
 }
