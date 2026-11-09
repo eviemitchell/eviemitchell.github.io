@@ -514,7 +514,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
     min-height: calc(100svh - var(--header) - 84px);
     padding: 24px 0;
   }
-  .hero-drawing { display: block; position: relative; width: 100%; max-width: 440px; margin: 0 auto; }
+  /* the drawing fills the column, but is never taller than half the screen.
+     (190 / 278 is the drawing's shape, so this width gives a height of 50% of the screen) */
+  .hero-drawing { display: block; position: relative; width: min(100%, 440px, calc(50vh * 190 / 278)); margin: 0 auto; }
+  @supports (height: 50svh) {
+    .hero-drawing { width: min(100%, 440px, calc(50svh * 190 / 278)); }
+  }
   .hero-drawing img { width: 100%; height: auto; aspect-ratio: 190 / 278; }
   .hero-greeting { font-size: 19px; margin-top: 20px; }
 
