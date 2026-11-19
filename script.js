@@ -168,7 +168,7 @@ if ("IntersectionObserver" in window) {
 // Divider lines (and the lines above "up next" and the footer) grow in from
 // the left once they're a little way onto the screen. Add class="grow-line"
 // to anything else with a line you want to animate the same way.
-const GROW_LINES = ".section-divider, .more-work, .site-footer, .grow-line";
+const GROW_LINES = ".section-divider, .site-footer, .grow-line";
 const lines = document.querySelectorAll(GROW_LINES);
 if ("IntersectionObserver" in window) {
   const lineWatcher = new IntersectionObserver(function (entries) {

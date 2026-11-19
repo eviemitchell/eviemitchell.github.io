@@ -322,8 +322,7 @@
 
 
 /* ---------- BOTTOM OF THE PAGE ---------- */
-.more-work { position: relative; margin-top: 96px; padding-top: 18px; font-size: 15px; }
-.more-work::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--line); transform-origin: left; }
+.more-work { margin-top: 96px; font-size: 15px; }
 .more-work p { margin: 0 0 8px; color: var(--muted); }
 .more-work ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
@@ -349,6 +348,7 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.stat-callout.no-lines { padding: 0; border: 0; }   /* add "no-lines" to drop the lines above and below */
 .case-section .stat-callout-number {
   flex-shrink: 0;
   margin: 0;
@@ -468,10 +468,8 @@
 }
 
 /* these lines grow in from the left when they scroll into view (script.js) */
-.js .section-divider,
-.js .more-work::before { transform: scaleX(0); }
-.js .section-divider.is-visible,
-.js .more-work.is-visible::before { transform: scaleX(1); transition: transform 0.9s cubic-bezier(.3, .8, .3, 1); }
+.js .section-divider { transform: scaleX(0); }
+.js .section-divider.is-visible { transform: scaleX(1); transition: transform 0.9s cubic-bezier(.3, .8, .3, 1); }
 
 
 /* =============================================================
@@ -547,8 +545,7 @@
   .js .reveal .impact-sparkle { opacity: 1; transform: none; }
   .js .reveal .phase-bar { transform: none; }
   .js .reveal .phase-marker svg { opacity: 1; }
-  .js .section-divider,
-  .js .more-work::before { transform: none; }
+  .js .section-divider { transform: none; }
 }
 
 
