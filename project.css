@@ -521,6 +521,23 @@
 }
 
 
+/* ---------- AI BLOOM ----------
+   The bloom strip (bloom.js) runs down the side of a block of content,
+   like the principles list in "Designing for trust in AI".
+   On big screens it hangs in the left margin so the text stays aligned;
+   on smaller screens (no room in the margin) it sits just inside the column. */
+.bloom-beside { position: relative; }
+.bloom-strip { position: absolute; top: 0; bottom: 0; left: -76px; width: 48px; height: 100%; }
+@media (max-width: 1120px) {
+  .bloom-beside { padding-left: 52px; }
+  .bloom-strip { left: 0; width: 36px; }
+}
+@media (max-width: 960px) {
+  .bloom-beside { padding-left: 40px; }
+  .bloom-strip { left: 0; width: 30px; }
+}
+
+
 /* respect "reduce motion": show the charts finished, no animation */
 @media (prefers-reduced-motion: reduce) {
   .js .reveal .hours-bar,
