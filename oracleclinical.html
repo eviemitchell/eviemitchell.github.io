@@ -212,33 +212,17 @@
         <h2><span class="section-number">06</span>Designing for trust in AI</h2>
         <p>In medicine, AI output that a physician can't check is worse than no AI at all. The physician is legally and medically responsible for every word in the record, so every part of this experience was built around one rule:</p>
         <p class="lead">AI drafts, the physician decides.</p>
-        <ol class="numbered">
-          <li><span><strong>Nothing reaches the record without the physician.</strong> AI drafts the note and even suggests orders from the visit audio, but each one waits for the physician to confirm it, and the note is only final once they sign.</span></li>
-          <li><span><strong>Every fact traces back to its source.</strong> Results and data pulled from the chart keep clear attribution and a link to the original record, instead of untraceable copy-paste.</span></li>
-          <li><span><strong>Physicians can see exactly where content came from.</strong> Every AI contribution ends with a precise attribution footnote naming its key sources, like "Generated from Intake - NP T. Titus and Pre-Visit Registration," so it's clear what to check it against.</span></li>
-          <li><span><strong>AI content stays marked until the physician makes it theirs.</strong> Anything AI generates arrives with the AI bloom, a strip of drifting particles beside it. Once the physician confirms the content or takes the action it recommends, the bloom settles and disappears, so anything still blooming is something they haven't reviewed yet.</span></li>
-          <li><span><strong>Review is quick, so it actually happens.</strong> AI collates every source and trims redundancy, so the physician reviews a concise note instead of a wall of text, then signs in one click.</span></li>
-        </ol>
-
-        <!-- AI bloom demo (bloom.js): the strip plays on its own; "Confirm" makes it settle, then "Replay" brings it back.
-             Change the note text freely; keep the class names. -->
-        <figure class="bloom-demo">
-          <div class="ai-note">
-            <p class="ai-note-title">History of present illness</p>
-            <div class="ai-note-body">
-              <canvas class="bloom-strip" aria-hidden="true"></canvas>
-              <div class="ai-note-text">
-                <p>Patient reports stomach pain for 4 days, worse in the mornings. Rates pain 4/10 at intake, down from this morning. No prior history of GI conditions.</p>
-                <p class="ai-source">Generated from <span>Intake - NP T. Titus</span> and <span>Pre-Visit Registration</span></p>
-              </div>
-            </div>
-            <div class="ai-note-actions">
-              <span class="bloom-status sr-only" aria-live="polite">AI-generated draft, not yet confirmed.</span>
-              <button type="button" class="bloom-confirm">Confirm</button>
-            </div>
-          </div>
-          <figcaption>Try it: confirm the AI draft, and the bloom settles away.</figcaption>
-        </figure>
+        <!-- the AI bloom (bloom.js) runs down the side of the principles, looping while on screen -->
+        <div class="bloom-beside">
+          <canvas class="bloom-strip" aria-hidden="true"></canvas>
+          <ol class="numbered">
+            <li><span><strong>Nothing reaches the record without the physician.</strong> AI drafts the note and even suggests orders from the visit audio, but each one waits for the physician to confirm it, and the note is only final once they sign.</span></li>
+            <li><span><strong>Every fact traces back to its source.</strong> Results and data pulled from the chart keep clear attribution and a link to the original record, instead of untraceable copy-paste.</span></li>
+            <li><span><strong>Physicians can see exactly where content came from.</strong> Every AI contribution ends with a precise attribution footnote naming its key sources, like "Generated from Intake - NP T. Titus and Pre-Visit Registration," so it's clear what to check it against.</span></li>
+            <li><span><strong>AI content stays marked until the physician makes it theirs.</strong> Anything AI generates arrives with the AI bloom, a strip of drifting particles beside it. Once the physician confirms the content or takes the action it recommends, the bloom settles and disappears, so anything still blooming is something they haven't reviewed yet.</span></li>
+            <li><span><strong>Review is quick, so it actually happens.</strong> AI collates every source and trims redundancy, so the physician reviews a concise note instead of a wall of text, then signs in one click.</span></li>
+          </ol>
+        </div>
       </section>
 
 
