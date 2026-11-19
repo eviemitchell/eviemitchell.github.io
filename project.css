@@ -322,7 +322,8 @@
 
 
 /* ---------- BOTTOM OF THE PAGE ---------- */
-.more-work { margin-top: 96px; font-size: 15px; }
+.more-work { position: relative; margin-top: 96px; padding-top: 18px; font-size: 15px; }
+.more-work::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--line); transform-origin: left; }
 .more-work p { margin: 0 0 8px; color: var(--muted); }
 .more-work ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
@@ -468,8 +469,10 @@
 }
 
 /* these lines grow in from the left when they scroll into view (script.js) */
-.js .section-divider { transform: scaleX(0); }
-.js .section-divider.is-visible { transform: scaleX(1); transition: transform 0.9s cubic-bezier(.3, .8, .3, 1); }
+.js .section-divider,
+.js .more-work::before { transform: scaleX(0); }
+.js .section-divider.is-visible,
+.js .more-work.is-visible::before { transform: scaleX(1); transition: transform 0.9s cubic-bezier(.3, .8, .3, 1); }
 
 
 /* =============================================================
@@ -545,7 +548,8 @@
   .js .reveal .impact-sparkle { opacity: 1; transform: none; }
   .js .reveal .phase-bar { transform: none; }
   .js .reveal .phase-marker svg { opacity: 1; }
-  .js .section-divider { transform: none; }
+  .js .section-divider,
+  .js .more-work::before { transform: none; }
 }
 
 
